@@ -2,12 +2,11 @@
     android:fillAfter="true" >
 
     <scale
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:duration="2000"
+        android:duration="1000"
         android:fromXScale="0.25"
         android:fromYScale="0.25"
-        android:pivotX="0%"
-        android:pivotY="0%"
+        android:pivotX="50%"
+        android:pivotY="50%"
         android:toXScale="1"
         android:toYScale="1" >
     </scale>
