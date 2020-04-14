@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282534811382",
+    "firebase_url": "https://heal-her-soul.firebaseio.com",
+    "project_id": "heal-her-soul",
+    "storage_bucket": "heal-her-soul.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282534811382:android:ce0a0948800e1de1793ed7",
+        "android_client_info": {
+          "package_name": "com.example.healhersoul"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282534811382-dmvb5umofdb1i8i58rekaaf31vcbuqpa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healhersoul",
+            "certificate_hash": "cc41727e50ddfba6b9689358f49889ecebf136ce"
+          }
+        },
+        {
+          "client_id": "282534811382-kn0krgj4ugqmaomdtvdbnoooqgjidodr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJiDBtUonQMiX-YjFAm4LQyWuG2hSAJrI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282534811382-kn0krgj4ugqmaomdtvdbnoooqgjidodr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

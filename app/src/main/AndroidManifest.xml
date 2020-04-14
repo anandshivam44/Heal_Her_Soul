@@ -11,6 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".LoginPage"></activity>
         <activity android:name=".IntroPage">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login"></activity>
+        <activity
+            android:name=".Logo"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
@@ -18,7 +24,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Logo"></activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
