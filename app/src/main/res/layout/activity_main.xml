@@ -56,6 +56,7 @@
             android:orientation="horizontal"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
             android:elevation="20dp"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="10dp"
@@ -124,6 +125,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:elevation="20dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="10dp"
             android:background="@color/bg"
@@ -166,7 +168,7 @@
                     android:layout_width="70dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="2dp"
-                    android:src="@drawable/qoute"
+                    android:src="@drawable/qoute1"
                     android:layout_gravity="center"
                     />
                 <TextView
@@ -191,6 +193,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:elevation="20dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="10dp"
             android:background="@color/bg"
