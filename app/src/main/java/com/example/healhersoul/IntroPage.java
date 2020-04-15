@@ -1,40 +1,74 @@
 package com.example.healhersoul;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.Toast;
+import com.hololo.tutorial.library.PermissionStep;
+import com.hololo.tutorial.library.Step;
+import com.hololo.tutorial.library.TutorialActivity;
 
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
+public class IntroPage extends TutorialActivity {
 
-public class IntroPage extends AppCompatActivity {
-   private CarouselView carouselView;
-   private Button next;
-   private int[] sampleImages = {R.drawable.dr, R.drawable.group2, R.drawable.happy3, R.drawable.birthrate, R.drawable.pregnantfirst
-           , R.drawable.thebabyscan, R.drawable.pregnanter, R.drawable.pregnantmom, R.drawable.womanpregnant};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro_page);
-        carouselView = findViewById(R.id.carouselView);
-        carouselView.setPageCount(sampleImages.length);
-        carouselView.setImageListener(imageListener);
-        next=findViewById(R.id.nextHomeBtn);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(IntroPage.this, LoginPage.class));
-            }
-        });
+
+        addFragment(
+                new Step.Builder()
+                        .setTitle(getString(R.string.page_0_title))
+                        .setContent(getString(R.string.page_0_content))
+                        .setBackgroundColor(Color.parseColor("#FF0957"))//  #CA70F3
+                        .setDrawable(R.drawable.fig_del)
+                        .setSummary(getString(R.string.page_0_summary))
+                        .build());
+        addFragment(
+                new Step.Builder()
+                        .setTitle(getString(R.string.page_1_title))
+                        .setContent(getString(R.string.page_1_content))
+                        .setBackgroundColor(Color.parseColor("#99FF0957"))
+                        .setDrawable(R.drawable.fig_1)
+                        .setSummary(getString(R.string.page_1_summary))
+                        .build());
+        addFragment(
+                new Step.Builder()
+                        .setTitle(getString(R.string.page_2_title))
+                        .setContent(getString(R.string.page_2_content))
+                        .setBackgroundColor(Color.parseColor("#00D4BA"))
+                        .setDrawable(R.drawable.fig_2)
+                        .setSummary(getString(R.string.page_2_summary))
+                        .build());
+        addFragment(
+                new Step.Builder()
+                        .setTitle(getString(R.string.page_3_title))
+                        .setContent(getString(R.string.page_3_content))
+                        .setBackgroundColor(Color.parseColor("#1098FE"))
+                        .setDrawable(R.drawable.fig_3)
+                        .setSummary(getString(R.string.page_3_summary))
+                        .build());
+
+        addFragment(
+                new PermissionStep
+                        .Builder()
+                        .setPermissions(new String[]{Manifest.permission.READ_SMS,Manifest.permission.ACCESS_FINE_LOCATION})
+                        .setTitle(getString(R.string.page_4_title)).setContent(getString(R.string.page_4_content))
+                        .setBackgroundColor(Color.parseColor("#8BCEAB"))//#8BCEAB
+                        .setDrawable(R.drawable.fig_4)
+                        .setSummary(getString(R.string.page_4_summary))
+                        .build());
     }
-    ImageListener imageListener = new ImageListener() {
-        @Override
-        public void setImageForPosition(int position, ImageView imageView) {
-            imageView.setImageResource(sampleImages[position]);
-        }
-    };
+
+    @Override
+    public void finishTutorial() {
+        Toast.makeText(this, "Tutorial finished", Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(IntroPage.this,MainActivity.class);
+        startActivity(intent);
+        //finish();
+    }
+
+    @Override
+    public void currentFragmentPosition(int position) {
+        Toast.makeText(this, "Position : " + position, Toast.LENGTH_SHORT).show();
+    }
+
 }
