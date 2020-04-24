@@ -61,7 +61,7 @@ public class IntroPage extends TutorialActivity {
     @Override
     public void finishTutorial() {
         Toast.makeText(this, "Tutorial finished", Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(IntroPage.this,MainActivity.class);
+        Intent intent=new Intent(IntroPage.this,LoginPage.class);
         startActivity(intent);
         //finish();
     }

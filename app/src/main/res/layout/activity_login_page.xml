@@ -79,6 +79,16 @@
 
         ></Button>
 
+    <TextView
+        android:id="@+id/skip_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip Login for developers only"
+        android:layout_marginBottom="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
 
 
 </RelativeLayout>

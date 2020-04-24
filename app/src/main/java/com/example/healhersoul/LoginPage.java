@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,6 +39,7 @@ public class LoginPage extends AppCompatActivity implements
     private Button SignInButton;
     private Button sendOTPButton;
     private String mVerificationId;
+    TextView skip_button;
 
 
     private FirebaseAuth mAuth;
@@ -66,6 +68,8 @@ public class LoginPage extends AppCompatActivity implements
         spinner=findViewById(R.id.spinner_country_code);
         SignInButton=findViewById(R.id.sign_in);
         sendOTPButton=findViewById(R.id.bt_send_otp);
+        skip_button=findViewById(R.id.skip_login);
+
 
         spinner.setOnItemSelectedListener(this);
         ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,countryCode);
@@ -78,6 +82,15 @@ public class LoginPage extends AppCompatActivity implements
             public void onClick(View view) {
                 phoneNumber=et_phoneNumber.getText().toString();
                 initiateLoginProcess();
+            }
+        });
+
+        skip_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginPage.this, MainActivity.class);
+//            Log.d(TAG, "Inside OTP\n\n"+"UID " + mAuth.getUid() + " \nCurrent User " + mAuth.getCurrentUser() + " \nPhone Number " + mAuth.getCurrentUser().getPhoneNumber());
+            startActivity(intent);
             }
         });
 
