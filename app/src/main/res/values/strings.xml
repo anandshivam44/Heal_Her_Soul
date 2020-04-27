@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Heal Her Soul</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
     <string name="page_0_title">Heal Her Soul</string>
     <string name="page_0_content">Brief discription about what we do. How far we have achieved</string>
@@ -21,5 +23,8 @@
     <string name="page_4_title">Permissions Required</string>
     <string name="page_4_content">Give your app to access location, read otp, etc etc etc etc etc ............</string>
     <string name="page_4_summary">Page 4 Summary Here</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

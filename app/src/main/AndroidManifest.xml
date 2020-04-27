@@ -25,8 +25,12 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginPage"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".LoginPage"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
         <activity android:name=".IntroPage"></activity>
 
         <meta-data

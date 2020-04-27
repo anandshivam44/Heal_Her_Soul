@@ -19,13 +19,13 @@ public class Logo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logo);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        logoForAnimation=findViewById(R.id.logo);
-        appNameForAnimation=findViewById(R.id.this_is_app_name);
+        logoForAnimation = findViewById(R.id.logo);
+        appNameForAnimation = findViewById(R.id.this_is_app_name);
 
-        Animation animation_image= AnimationUtils.loadAnimation(this,R.anim.logo_anim);
-        Animation animation_appname= AnimationUtils.loadAnimation(this,R.anim.text_anim);
+        Animation animation_image = AnimationUtils.loadAnimation(this, R.anim.logo_anim);
+        Animation animation_appname = AnimationUtils.loadAnimation(this, R.anim.text_anim);
 
         logoForAnimation.startAnimation(animation_image);
         appNameForAnimation.startAnimation(animation_appname);
@@ -33,11 +33,11 @@ public class Logo extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(Logo.this,IntroPage.class);
+                Intent intent = new Intent(Logo.this, IntroPage.class);
                 startActivity(intent);
                 //finish();
             }
-        },7000);
+        }, 3500);
 
 
     }

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/vector_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/vector_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_articles"
+            android:icon="@drawable/vector_articles"
+            android:title="Articles" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/vector_widget"
+            android:title="Tools" />
+        <item
+            android:id="@+id/nav_telephone_directory"
+            android:icon="@drawable/vector_telephone_directory"
+            android:title="Telephone Directory" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/vector_faq"
+            android:title="FAQ's" />
+        <item
+            android:id="@+id/nav_emergency"
+            android:icon="@drawable/vector_emergency"
+            android:title="Emergency" />
+    </group>
+
+    <item android:title="NGO: Heal Her Soul Foundation">
+        <menu>
+            <item
+                android:id="@+id/nav_workshop"
+                android:icon="@drawable/vector_workshop"
+                android:title="Workshop" />
+            <item
+                android:id="@+id/nav_donate"
+                android:icon="@drawable/vector_donate"
+                android:title="Donate" />
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/vector_about_us"
+                android:title="About Us" />
+        </menu>
+    </item>
+</menu>
