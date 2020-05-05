@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment_emergency">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:padding="15dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment Emergency"
-        android:gravity="center"
-        android:textSize="30sp"
         android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Send SMS to A,B,C\nThis button doesn't works if you have not set default sim to send SMS in your phone or you default doesn't have balance to send message\n\nCurrently it sends to +917645088895"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/emergency_button"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/emergency_button"
+        android:layout_width="275sp"
+        android:layout_height="95sp"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:text="Emergency Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707"
+        android:background="@drawable/maroon_background"
         />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

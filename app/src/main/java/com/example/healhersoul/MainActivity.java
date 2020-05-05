@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -88,8 +89,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_about_us:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new about_us()).commit();
                 break;
-
-
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -15,7 +15,6 @@
         app:lottie_fileName="anim-2.json"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
-
         />
 
     <TextView
