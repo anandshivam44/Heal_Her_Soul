@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -39,7 +41,10 @@ public class fragment_chat_bot extends Fragment {
     //    Firebase mRef;
     private FirebaseListAdapter<ChatMessage> adapter;
     DatabaseReference groupName;
-    ArrayList<String> daysOfWeek=new ArrayList<>();
+    ArrayList<String> user = new ArrayList<>();
+    ArrayList<String> message = new ArrayList<>();
+    ProgrammingAdapter mAdapter;
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,11 +66,17 @@ public class fragment_chat_bot extends Fragment {
             Toast.makeText(getActivity(), "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
 
         }
+        recyclerView = getView().findViewById(R.id.recyclerview_message);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter = new ProgrammingAdapter(user, message,FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
+        recyclerView.setAdapter(mAdapter);
+
+
         groupName = FirebaseDatabase.getInstance().getReference("Group");
         groupName.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Log.d("MyTag", "Child added ");
+                //Log.d("MyTag", "Child added ");
                 if (dataSnapshot.exists()) {
                     DisplayMessages(dataSnapshot);
                 }
@@ -123,31 +134,7 @@ public class fragment_chat_bot extends Fragment {
     }
 
     private void displayChatMessages() {
-        ListView listOfMessages = (ListView) getView().findViewById(R.id.list_of_messages);
-        Query query = FirebaseDatabase.getInstance().getReference();
-        FirebaseListOptions<ChatMessage> options = new FirebaseListOptions.Builder<ChatMessage>()
-                .setQuery(query, ChatMessage.class)
-                .setLayout(R.layout.message)
-                .build();
-        adapter = new FirebaseListAdapter<ChatMessage>(options) {
-            @Override
-            protected void populateView(View v, ChatMessage model, int position) {
-                // Get references to the views of message.xml
-                TextView messageText = (TextView) v.findViewById(R.id.message_text);
-                TextView messageUser = (TextView) v.findViewById(R.id.message_user);
-                TextView messageTime = (TextView) v.findViewById(R.id.message_time);
 
-                // Set their text
-                messageText.setText(model.getMessageText());
-                messageUser.setText(model.getMessageUser());
-
-                // Format the date before showing it
-                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",
-                        model.getMessageTime()));
-            }
-        };
-
-        listOfMessages.setAdapter(adapter);
 
     }
 
@@ -156,11 +143,16 @@ public class fragment_chat_bot extends Fragment {
         while (iterator.hasNext()) {
 //            String chatDate = (String) ((DataSnapshot) iterator.next()).getValue();
             String chatMessage = (String) ((DataSnapshot) iterator.next()).getValue().toString();
-            String chatName = (String) ((DataSnapshot) iterator.next()).getValue().toString();
             String chatTime = (String) ((DataSnapshot) iterator.next()).getValue().toString();
 
+            String chatName = (String) ((DataSnapshot) iterator.next()).getValue().toString();
+            user.add(chatName);
+            message.add(chatMessage);
+            mAdapter.notifyItemInserted(user.size() - 1);
+            recyclerView.smoothScrollToPosition(user.size()-1);
 
-            Log.d("MyTag", chatMessage + "                 " + chatName + " " + chatTime + " \n");
+
+            //Log.d("MyTag", chatMessage + "                 " + chatName + " " + chatTime + " \n");
 
         }
     }
