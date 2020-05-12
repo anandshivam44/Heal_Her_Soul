@@ -93,6 +93,12 @@ public class LoginPage extends AppCompatActivity implements
             startActivity(intent);
             }
         });
+        SignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                verifyVerificationCode(et_otp.getText().toString());
+            }
+        });
 
     }
 

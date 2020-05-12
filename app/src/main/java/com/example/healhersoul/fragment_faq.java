@@ -2,63 +2,77 @@ package com.example.healhersoul;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fragment_faq#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class fragment_faq extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    adapter_faq mAdapter;
+    ArrayList<String> question = new ArrayList<>();
+    ArrayList<String> answer = new ArrayList<>();
 
     public fragment_faq() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_faq.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static fragment_faq newInstance(String param1, String param2) {
-        fragment_faq fragment = new fragment_faq();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_faq, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        question.add("Question 0");
+        question.add("Question 1");
+        question.add("Question 2");
+        question.add("Question 3");
+        question.add("Question 4");
+        question.add("Question 5");
+        question.add("Question 6");
+        question.add("Question 7");
+        question.add("Question 8");
+        question.add("Question 9");
+        question.add("Question 10");
+        question.add("Question 11");
+        question.add("Question 12");
+        question.add("Question 13");
+        question.add("Question 14");
+        question.add("Question 15");
+        question.add("Question 16");
+
+        answer.add("Answer 0");
+        answer.add("Answer 1");
+        answer.add("Answer 2");
+        answer.add("Answer 3");
+        answer.add("Answer 4");
+        answer.add("Answer 5");
+        answer.add("Answer 6");
+        answer.add("Answer 7");
+        answer.add("Answer 8");
+        answer.add("Answer 9");
+        answer.add("Answer 10");
+        answer.add("Answer 11");
+        answer.add("Answer 12");
+        answer.add("Answer 13");
+        answer.add("Answer 14");
+        answer.add("Answer 15");
+        answer.add("Answer 16");
+
+        RecyclerView recyclerView = getView().findViewById(R.id.recycler_faq);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter = new adapter_faq(question, answer);
+        recyclerView.setAdapter(mAdapter);
     }
 }

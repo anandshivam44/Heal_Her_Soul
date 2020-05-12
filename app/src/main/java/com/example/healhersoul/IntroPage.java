@@ -1,9 +1,11 @@
 package com.example.healhersoul;
+
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.hololo.tutorial.library.PermissionStep;
 import com.hololo.tutorial.library.Step;
 import com.hololo.tutorial.library.TutorialActivity;
@@ -50,7 +52,7 @@ public class IntroPage extends TutorialActivity {
         addFragment(
                 new PermissionStep
                         .Builder()
-                        .setPermissions(new String[]{Manifest.permission.READ_SMS,Manifest.permission.ACCESS_FINE_LOCATION})
+                        .setPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS,Manifest.permission.RECEIVE_SMS})
                         .setTitle(getString(R.string.page_4_title)).setContent(getString(R.string.page_4_content))
                         .setBackgroundColor(Color.parseColor("#8BCEAB"))//#8BCEAB
                         .setDrawable(R.drawable.fig_4)
@@ -61,7 +63,7 @@ public class IntroPage extends TutorialActivity {
     @Override
     public void finishTutorial() {
         Toast.makeText(this, "Tutorial finished", Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(IntroPage.this,LoginPage.class);
+        Intent intent = new Intent(IntroPage.this, LoginPage.class);
         startActivity(intent);
         //finish();
     }

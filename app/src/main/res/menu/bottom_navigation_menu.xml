@@ -14,5 +14,5 @@
     <item
         android:id="@+id/nav_chat_bot"
         android:icon="@drawable/vector_chat"
-        android:title="ChatBot" />
+        android:title="Chat" />
 </menu>

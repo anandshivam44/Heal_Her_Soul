@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
+    android:background="#FFFFFF"
     tools:openDrawer="start"
     >
 
@@ -14,6 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="#FFFFFF"
+
 
         >
 
@@ -21,7 +24,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#abcdef"
+            android:background="#2c3e50"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -30,15 +33,19 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
+            android:background="#FFFFFF"
+
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu"
-            android:background="?android:attr/windowBackground"
-            />
+
+
+            app:menu="@menu/bottom_navigation_menu" />
+        <!--            android:background="?android:attr/windowBackground"-->
+
 
 
     </LinearLayout>
@@ -47,6 +54,7 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:layout_gravity="start"
         app:headerLayout="@layout/menu_nav_header"
         app:menu="@menu/drawer_menu" />
