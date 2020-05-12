@@ -30,7 +30,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 
 import static com.google.firebase.database.FirebaseDatabase.getInstance;
@@ -63,12 +65,12 @@ public class fragment_chat_bot extends Fragment {
             Toast.makeText(getActivity(), "User not logged in", Toast.LENGTH_LONG).show();
 
         } else {
-            Toast.makeText(getActivity(), "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Welcome " + FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber(), Toast.LENGTH_LONG).show();
 
         }
         recyclerView = getView().findViewById(R.id.recyclerview_message);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mAdapter = new ProgrammingAdapter(user, message,FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
+        mAdapter = new ProgrammingAdapter(user, message, FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber());
         recyclerView.setAdapter(mAdapter);
 
 
@@ -109,47 +111,38 @@ public class fragment_chat_bot extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getContext(), "Button Clicked", Toast.LENGTH_SHORT).show();
 
-                // Write a message to the database
-//                FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                DatabaseReference myRef = database.getReference("message");
-//                myRef.setValue("Shivama !");
+                Calendar calForDate = Calendar.getInstance();
+                SimpleDateFormat currentDateFormat = new SimpleDateFormat("MMM dd, yyyy");
+                String currentDate = currentDateFormat.format(calForDate.getTime());
+
+                Calendar calForTime = Calendar.getInstance();
+                SimpleDateFormat currentTimeFormat = new SimpleDateFormat("hh:mm a");
+                String currentTime = currentTimeFormat.format(calForTime.getTime());
 
                 FirebaseDatabase.getInstance()
                         .getReference("Group")
                         .push()
                         .setValue(new ChatMessage(input.getText().toString(),
                                 FirebaseAuth.getInstance()
-                                        .getCurrentUser().getUid())
+                                        .getCurrentUser().getPhoneNumber())
                         );
-
-                // Clear the input
                 input.setText("");
-//
-//                FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),
-//                        FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-//                input.setText("");
-//                input.requestFocus();
+                ;
             }
         });
-    }
-
-    private void displayChatMessages() {
-
-
     }
 
     private void DisplayMessages(DataSnapshot dataSnapshot) {
         Iterator iterator = dataSnapshot.getChildren().iterator();
         while (iterator.hasNext()) {
-//            String chatDate = (String) ((DataSnapshot) iterator.next()).getValue();
+            String chatDate = (String) ((DataSnapshot) iterator.next()).getValue();
             String chatMessage = (String) ((DataSnapshot) iterator.next()).getValue().toString();
             String chatTime = (String) ((DataSnapshot) iterator.next()).getValue().toString();
-
             String chatName = (String) ((DataSnapshot) iterator.next()).getValue().toString();
             user.add(chatName);
             message.add(chatMessage);
             mAdapter.notifyItemInserted(user.size() - 1);
-            recyclerView.smoothScrollToPosition(user.size()-1);
+            recyclerView.smoothScrollToPosition(user.size() - 1);
 
 
             //Log.d("MyTag", chatMessage + "                 " + chatName + " " + chatTime + " \n");

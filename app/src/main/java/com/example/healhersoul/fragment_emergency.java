@@ -35,13 +35,14 @@ public class fragment_emergency extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Button Clicked", Toast.LENGTH_SHORT).show();
                 String messageToSend = "Automated message from Shivam";//tested and working
-                String number = "+917979010458";
+                String number = "+917645088895";
                 SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
 
-                Intent myIntent = new Intent("android.intent.action.MAIN");
-                myIntent.setComponent(new ComponentName("com.whatsapp", "com.whatsapp.Conversation"));
-                myIntent.putExtra("abc", PhoneNumberUtils.stripSeparators("+917645088895") + "@s.whatsapp.net");
-                startActivity(myIntent);
+//                Intent myIntent = new Intent("android.intent.action.MAIN");
+//                myIntent.setComponent(new ComponentName("com.whatsapp", "com.whatsapp.Conversation"));
+//                myIntent.putExtra("abc", PhoneNumberUtils.stripSeparators("+917645088895") + "@s.whatsapp.net");
+//                startActivity(myIntent);
+
 //                SmsManager.getDefault().sendTextMessage(number, null, messageToSend, null, null);
 //                try {
 //                    String text = "CHECK";// Replace with your message.

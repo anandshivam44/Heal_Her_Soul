@@ -1,64 +1,64 @@
 package com.example.healhersoul;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link fragment_telephone_directory#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class fragment_telephone_directory extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public fragment_telephone_directory() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_telephone_directory.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static fragment_telephone_directory newInstance(String param1, String param2) {
-        fragment_telephone_directory fragment = new fragment_telephone_directory();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+public class fragment_telephone_directory extends Fragment implements adapterForTelephoneDirectory.AdapterClickEvents {
+    adapterForTelephoneDirectory mAdapter;
+    ArrayList<String> name = new ArrayList<>();
+    ArrayList<String> number = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        getActivity().setTitle("Call from App");
         return inflater.inflate(R.layout.fragment_telephone_directory, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        name.add("Mom");
+        number.add("8864038169");
+        name.add("Dad");
+        number.add("8603803436");
+        name.add("Person A");
+        number.add("7645088895");
+        name.add("Person B");
+        number.add("7979010458");
+        name.add("Doctor");
+        number.add("7979716172");
+        name.add("Ambulance");
+        number.add("102");
+
+        RecyclerView recyclerView = getView().findViewById(R.id.recycler_view_telephone_directory);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAdapter = new adapterForTelephoneDirectory(this, name, number);
+        recyclerView.setAdapter(mAdapter);
+
+
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+//        Toast.makeText(getContext(), "position" + ":" + name.get(position), Toast.LENGTH_SHORT).show();
+        Uri u = Uri.parse("tel:" + number.get(position));
+        Intent i = new Intent(Intent.ACTION_DIAL, u);
+        startActivity(i);
     }
 }

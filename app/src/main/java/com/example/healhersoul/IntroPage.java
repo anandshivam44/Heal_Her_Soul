@@ -52,7 +52,7 @@ public class IntroPage extends TutorialActivity {
         addFragment(
                 new PermissionStep
                         .Builder()
-                        .setPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS})
+                        .setPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS,Manifest.permission.RECEIVE_SMS})
                         .setTitle(getString(R.string.page_4_title)).setContent(getString(R.string.page_4_content))
                         .setBackgroundColor(Color.parseColor("#8BCEAB"))//#8BCEAB
                         .setDrawable(R.drawable.fig_4)
