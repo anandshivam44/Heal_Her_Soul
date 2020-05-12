@@ -83,11 +83,12 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
             Log.d(TAG, "Button Clicked "+view.getId());
             if (textView_answer.getVisibility()==View.GONE){ //expand on clicking
                 textView_answer.setVisibility(View.VISIBLE);
-                imageButton.setImageResource(R.drawable.vector_arrow_down);
+                imageButton.setImageResource(R.drawable.vector_arror_up);
             }
             else{
                 textView_answer.setVisibility(View.GONE);//collapse on clicking
-                imageButton.setImageResource(R.drawable.vector_arror_up);
+
+                imageButton.setImageResource(R.drawable.vector_arrow_down);
 
             }
 

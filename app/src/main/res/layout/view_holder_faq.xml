@@ -32,6 +32,7 @@
         android:layout_below="@+id/faq_text_question"
         android:text="Loding Answers"
         android:visibility="gone"
+        android:background="@color/placeholder_bg"
         android:textColor="#3C4054"
         android:animateLayoutChanges="true"
         />
