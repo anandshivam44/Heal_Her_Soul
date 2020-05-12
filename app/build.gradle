@@ -45,9 +45,17 @@ dependencies {
     implementation 'com.synnapps:carouselview:0.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.github.msayan:tutorial-view:v1.0.10'
+<<<<<<< HEAD
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+=======
     implementation 'com.github.lguipeng:BubbleView:1.0.1'
     implementation 'com.firebaseui:firebase-ui:3.1.0'//do not upgrade this
     implementation 'com.github.lguipeng:BubbleView:1.0.1'
+>>>>>>> 146d4e8ebd474c51e943fc5420b1474ed00b744f
 
 
 }

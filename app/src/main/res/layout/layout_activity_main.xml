@@ -9,7 +9,6 @@
     tools:context=".MainActivity"
     android:background="#FFFFFF"
     tools:openDrawer="start"
-
     >
 
     <LinearLayout
