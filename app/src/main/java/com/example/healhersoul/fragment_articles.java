@@ -4,13 +4,20 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +29,12 @@ public class fragment_articles extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().setTitle("Articles");
+//        getActivity().setTitle("Articles");
+//        getActivity().(Window.FEATURE_NO_TITLE); //will hide the title
+//        getSupportActionBar().hide(); // hide the title bar
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+//        navBar.setItemIconSize(0);
         return inflater.inflate(R.layout.fragment_articles, container, false);
     }
 
@@ -46,6 +58,30 @@ public class fragment_articles extends Fragment {
         String body="In 1948, the World Health Organization (WHO) defined health with a phrase that modern authorities still apply.Health is a state of complete physical, mental, and social well-being and not merely the absence of disease or infirmity. In 1986, the WHO made further clarifications: A resource for everyday life, not the objective of living. Health is a positive concept emphasizing social and personal resources, as well as physical capacities.";
 
         viewPager2.setAdapter(new SliderAdapter(sliderItems, viewPager2,body));
+        viewPager2.setClipToPadding(false);
+        viewPager2.setClipChildren(false);
+        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                page.setScaleY(0.85f + r * 0.145f);
+
+            }
+        });
+        viewPager2.setPageTransformer(compositePageTransformer);
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+        navBar.setVisibility(View.VISIBLE);
     }
 }
