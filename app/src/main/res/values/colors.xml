@@ -10,4 +10,5 @@
     <color name="kivy">#ffda79</color>
     <color name="dark">#4b6584</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="placeholder_bg">#dddddd</color>
 </resources>
