@@ -69,7 +69,27 @@ public class fragment_articles extends Fragment {
             @Override
             public void transformPage(@NonNull View page, float position) {
                 float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r * 0.145f);
+                page.setScaleX(0.85f + r * 0.145f);
+//                 final float MIN_SCALE = 0.65f;
+//                if (position < -1) {
+//                    page.setAlpha(0);
+//                } else if (position <= 0) {
+//                    page.setAlpha(1);
+//                    page.setTranslationX(page.getWidth() * -position);
+//                    page.setTranslationY(page.getHeight() * position);
+//                    page.setScaleX(1);
+//                    page.setScaleY(1);
+//                } else if (position <= 1) {
+//                    page.setAlpha(1 - position);
+//                    page.setTranslationX(page.getWidth() * -position);
+//                    page.setTranslationY(0);
+//                    float scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position));
+//                    page.setScaleX(scaleFactor);
+//                    page.setScaleY(scaleFactor);
+//
+//                } else if (position > 1){
+//                    page.setAlpha(0);
+//                }
 
             }
         });
