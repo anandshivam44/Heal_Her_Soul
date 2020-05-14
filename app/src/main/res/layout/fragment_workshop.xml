@@ -3,15 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_workshop">
+    tools:context=".fragment_workshop"
+    android:background="#48494A">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment Workshop"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_workshop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         />
 
 </RelativeLayout>
