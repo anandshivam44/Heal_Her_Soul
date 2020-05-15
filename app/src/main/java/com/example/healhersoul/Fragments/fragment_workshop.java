@@ -31,7 +31,7 @@ public class fragment_workshop extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getActivity().setTitle("WORKSHOP");
+        getActivity().setTitle("Workshop");
         return inflater.inflate(R.layout.fragment_workshop, container, false);
     }
 

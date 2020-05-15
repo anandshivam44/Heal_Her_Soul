@@ -25,6 +25,8 @@ public class fragment_emergency extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().setTitle("Emergency");
+
         return inflater.inflate(R.layout.fragment_emergency, container, false);
     }
 

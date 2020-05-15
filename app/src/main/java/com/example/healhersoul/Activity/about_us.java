@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.healhersoul.R;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 
 public class about_us extends Fragment {
@@ -24,5 +25,7 @@ public class about_us extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        YouTubePlayerView youTubePlayerView = getView().findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
     }
 }
