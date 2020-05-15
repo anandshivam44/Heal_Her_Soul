@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Objects;
 
 import com.google.gson.annotations.SerializedName;
 

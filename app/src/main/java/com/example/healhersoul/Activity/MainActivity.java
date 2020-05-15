@@ -1,10 +1,9 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -12,16 +11,21 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
+import com.example.healhersoul.Fragments.Fragment_profile;
+import com.example.healhersoul.Fragments.fragment_articles;
+import com.example.healhersoul.Fragments.fragment_chat_bot;
+import com.example.healhersoul.Fragments.fragment_donate;
+import com.example.healhersoul.Fragments.fragment_emergency;
+import com.example.healhersoul.Fragments.fragment_faq;
+import com.example.healhersoul.Fragments.fragment_forum;
+import com.example.healhersoul.Fragments.fragment_home;
+import com.example.healhersoul.Fragments.fragment_telephone_directory;
+import com.example.healhersoul.Fragments.fragment_tools;
+import com.example.healhersoul.Fragments.fragment_workshop;
+import com.example.healhersoul.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.synnapps.carouselview.CarouselView;
-import com.synnapps.carouselview.ImageListener;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //    private CarouselView carouselView;

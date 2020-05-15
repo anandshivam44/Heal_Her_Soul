@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Fragments;
 
 import android.os.Bundle;
 
@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.healhersoul.R;
+import com.example.healhersoul.Adapters.adapter_workshop;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Objects;
 
 public class SliderItem {
     private int image;

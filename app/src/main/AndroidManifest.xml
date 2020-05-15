@@ -18,13 +18,13 @@
 
 
         <activity
-            android:name=".Logo"
+            android:name=".Activity.Logo"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".LoginPage"
+            android:name=".Activity.LoginPage"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -33,7 +33,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".IntroPage"></activity>
+        <activity android:name=".Activity.IntroPage"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

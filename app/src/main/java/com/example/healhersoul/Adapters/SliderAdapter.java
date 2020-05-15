@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.healhersoul.R;
+import com.example.healhersoul.Objects.SliderItem;
 import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.List;

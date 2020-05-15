@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Fragments;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.healhersoul.R;
 
 
 public class fragment_emergency extends Fragment {

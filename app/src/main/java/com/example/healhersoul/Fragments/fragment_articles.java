@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Fragments;
 
 import android.os.Bundle;
 
@@ -15,8 +15,10 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 
+import com.example.healhersoul.R;
+import com.example.healhersoul.Adapters.SliderAdapter;
+import com.example.healhersoul.Objects.SliderItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;

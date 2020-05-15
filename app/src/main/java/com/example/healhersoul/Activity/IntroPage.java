@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Activity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.healhersoul.R;
 import com.hololo.tutorial.library.PermissionStep;
 import com.hololo.tutorial.library.Step;
 import com.hololo.tutorial.library.TutorialActivity;

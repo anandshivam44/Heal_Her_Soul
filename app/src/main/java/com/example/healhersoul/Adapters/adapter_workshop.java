@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Adapters;
 
 
 import android.view.LayoutInflater;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.healhersoul.R;
 
 import java.util.ArrayList;
 
