@@ -5,13 +5,21 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.fragment_home">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fragment Home"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        />
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerImageSlider_workshop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2A2C2C"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+
 
 </RelativeLayout>
