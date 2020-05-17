@@ -19,17 +19,20 @@ import com.example.healhersoul.Adapters.SliderAdapter_article_in_home;
 import com.example.healhersoul.Adapters.SliderAdapter_workshop;
 import com.example.healhersoul.Objects.SliderItem;
 import com.example.healhersoul.R;
+import com.github.lzyzsd.circleprogress.ArcProgress;
+import com.github.lzyzsd.circleprogress.DonutProgress;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class fragment_home extends Fragment {
-
     private ViewPager2 viewPager2ForArticle;
     private Handler SliderHandlerForArticle = new Handler();
 
     private ViewPager2 viewPager2ForWorkshop;
     private Handler SliderHandlerForWorkshop = new Handler();
+
+    ArcProgress arcProgress;//progressBar
 
 
     @Override
@@ -93,9 +96,14 @@ public class fragment_home extends Fragment {
                 SliderHandlerForWorkshop.postDelayed(SliderRunnbleForWorkshop, 2000); //2 sec delay
             }
         });
+/**setting values to progress bar*/
+        arcProgress=getActivity().findViewById(R.id.arc_progress);
+        arcProgress.setProgress(40);
+       arcProgress.setStrokeWidth(40);
 
 
     }
+
 
     private Runnable SliderRunnbleForWorkshop = new Runnable() {
         @Override
