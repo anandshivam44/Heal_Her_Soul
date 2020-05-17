@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.fragment_about">
+    tools:context=".Fragments.fragment_about_us"
+    >
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,10 +15,31 @@
             android:id="@+id/youtube_player_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:layout_alignParentTop="true"
             app:autoPlay="false"
             app:showFullScreenButton="true"
             app:videoId="A-c_U4s7gu4" />
-    </LinearLayout>
+        <TextView
+            android:id="@+id/title_about_us"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:padding="10sp"
+            android:layout_below="@+id/youtube_player_view"
+            android:gravity="center_horizontal"
+            android:text="Know about WHO"
+            android:textSize="25sp"
+            />
+        <TextView
+            android:id="@+id/about_us_message"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_about_us"
+            android:text="@string/aboutUs"
+            android:justificationMode="inter_word"
+            android:paddingHorizontal="23sp"
+            />
+    </RelativeLayout>
 
 </ScrollView>
