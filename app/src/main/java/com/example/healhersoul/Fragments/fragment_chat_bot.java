@@ -1,5 +1,6 @@
 package com.example.healhersoul.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,7 @@ public class fragment_chat_bot extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         input = (EditText) getView().findViewById(R.id.input);
 

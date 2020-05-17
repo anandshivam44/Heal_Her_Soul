@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.example.healhersoul.Fragments.fragment_workshop;
 import com.example.healhersoul.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //    private CarouselView carouselView;
@@ -125,26 +127,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
+                    boolean b=false;
 
                     switch (item.getItemId()) {
                         case R.id.nav_forum:
+                            b=true;
                             frag_art = false;
                             selectedFragment = new fragment_forum();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                    selectedFragment).commit();
                             break;
                         case R.id.nav_home:
+                            b=true;
                             frag_art = false;
                             selectedFragment = new fragment_home();
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                    selectedFragment).commit();
                             break;
                         case R.id.nav_chat_bot:
                             frag_art = false;
-                            selectedFragment = new fragment_chat_bot();
+                            if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                                Intent intent = new Intent(MainActivity.this, LoginPage.class);
+                                startActivity(intent);
+                            } else {
+                                selectedFragment = new fragment_chat_bot();
+                                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                        selectedFragment).commit();
+                                b=true;
+                            }
                             break;
                     }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
 
-                    return true;
+
+                    return b;
                 }
             };
 

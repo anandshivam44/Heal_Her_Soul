@@ -9,6 +9,27 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.fragment_chat_bot">
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
+
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <Button
         android:layout_width="wrap_content"

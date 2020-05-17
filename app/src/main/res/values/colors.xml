@@ -11,4 +11,6 @@
     <color name="dark">#4b6584</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="placeholder_bg">#dddddd</color>
+    <color name="background">#dddddd</color>
+
 </resources>
