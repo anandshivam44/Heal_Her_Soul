@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.healhersoul.Objects.ChatMessage;
 import com.example.healhersoul.Adapters.ProgrammingAdapter;
 import com.example.healhersoul.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -44,11 +45,12 @@ public class fragment_chat_bot extends Fragment {
     ArrayList<String> message = new ArrayList<>();
     ProgrammingAdapter mAdapter;
     RecyclerView recyclerView;
+    private ShimmerFrameLayout mShimmerViewContainer;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chat_bot, container, false);
     }
 
@@ -56,6 +58,7 @@ public class fragment_chat_bot extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mShimmerViewContainer = getView().findViewById(R.id.shimmer_inside_chat);
 
         input = (EditText) getView().findViewById(R.id.input);
 
@@ -76,6 +79,8 @@ public class fragment_chat_bot extends Fragment {
         groupName.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                mShimmerViewContainer.stopShimmer();
+                mShimmerViewContainer.setVisibility(View.GONE);
                 //Log.d("MyTag", "Child added ");
                 if (dataSnapshot.exists()) {
                     DisplayMessages(dataSnapshot);
@@ -102,6 +107,8 @@ public class fragment_chat_bot extends Fragment {
 
             }
         });
+
+
 
         send = getView().findViewById(R.id.fab);
         send.setOnClickListener(new View.OnClickListener() {

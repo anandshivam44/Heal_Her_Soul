@@ -10,6 +10,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.fragment_chat_bot">
     <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_inside_chat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -17,9 +18,11 @@
         >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+            <include layout="@layout/smimmer_layout" />
+            <include layout="@layout/smimmer_layout" />
             <include layout="@layout/smimmer_layout" />
             <include layout="@layout/smimmer_layout" />
             <include layout="@layout/smimmer_layout" />
