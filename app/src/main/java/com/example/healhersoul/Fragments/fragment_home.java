@@ -51,9 +51,13 @@ public class fragment_home extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        LocalDate dateBefore = LocalDate.of(2020, Month.JANUARY, 1);
-        LocalDate dateAfter = LocalDate.of(2020, Month.MAY, 2);
-        long noOfDaysBetween = ChronoUnit.DAYS.between(dateBefore, dateAfter);
+
+        long noOfDaysBetween = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDate dateBefore = LocalDate.of(2020, Month.JANUARY, 1);
+            LocalDate dateAfter = LocalDate.of(2020, Month.MAY, 2);
+            noOfDaysBetween = ChronoUnit.DAYS.between(dateBefore, dateAfter);
+        }
 
         List<SliderItem> sliderItemsForArticles = new ArrayList<>();//fragment data temp
         sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_1));
@@ -111,7 +115,7 @@ public class fragment_home extends Fragment {
         arcProgress.setProgress(d) ;//
         Log.d("MyTag", "Days : " + d);
 
-        arcProgress.setStrokeWidth(70);
+        arcProgress.setStrokeWidth(50);
 
 
     }

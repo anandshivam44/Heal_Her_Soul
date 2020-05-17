@@ -12,7 +12,7 @@
         android:elevation="25dp"
         android:outlineAmbientShadowColor="#000000"
         android:outlineSpotShadowColor="#000000"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="5dp"
 
 
         >
@@ -33,6 +33,7 @@
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
+                android:alpha="0.8"
                 android:src="@mipmap/ic_launcher"
 
 

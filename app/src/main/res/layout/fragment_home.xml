@@ -27,19 +27,35 @@
 
             <com.github.lzyzsd.circleprogress.ArcProgress
                 android:id="@+id/arc_progress"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:background="#FEFEFF"
                 app:arc_bottom_text_size="12sp"
-                app:arc_finished_color="#4CAF50"
-                app:arc_unfinished_color="#9FA0A3"
-                custom:arc_bottom_text="PROGRESS"
+                app:arc_finished_color="#ccff7675"
+                app:arc_unfinished_color="#cca29bfe"
+                custom:arc_bottom_text="Journey"
                 custom:arc_progress="55"
 
                 />
 
 
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Week 23"
+            android:textAlignment="textEnd"
+            android:layout_marginRight="40sp"
+            android:textSize="40sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go to"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="40sp"
+            android:textSize="15sp"
+            />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -54,7 +70,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffeaa7"
+                android:background="#2674b9ff"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
@@ -68,13 +84,15 @@
                     <Button
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@mipmap/ic_launcher_round" />
+                        android:background="@drawable/vector_faq"
+                        android:backgroundTint="#cceb3b5a"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="button"
+                        android:text="Search for FAQ's"
                         android:textColor="#018a80" />
                 </LinearLayout>
 
@@ -88,13 +106,15 @@
                     <Button
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@mipmap/ic_launcher_round" />
+                        android:background="@drawable/vector_articles"
+                        android:backgroundTint="#cceb3b5a"
+                        />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="button"
+                        android:text="Read Articles"
                         android:textColor="#018a80" />
 
                 </LinearLayout>
@@ -107,15 +127,16 @@
                     android:orientation="vertical">
 
                     <Button
+                        android:backgroundTint="#cceb3b5a"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@mipmap/ic_launcher_round" />
+                        android:background="@drawable/vector_workshop" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:text="button"
+                        android:text="Workshop"
                         android:textColor="#018a80" />
                 </LinearLayout>
 
@@ -131,12 +152,28 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPagerImageSlider_article"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp" />
+            android:background="#fbf9e0"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reading List ..."
+                android:layout_marginLeft="40sp"
+                android:textColor="#B3000000"
+                android:layout_marginVertical="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                />
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImageSlider_article"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
+        </LinearLayout>
 
 
         <androidx.cardview.widget.CardView
@@ -152,7 +189,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffeaa7"
+                android:background="#2674b9ff"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
@@ -235,10 +272,12 @@
             android:id="@+id/viewPagerImageSlider_workshop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2A2C2C"
+            android:background="#287bed9f"
             android:paddingStart="80dp"
             android:paddingEnd="80dp"
-            tools:ignore="MissingConstraints" />
+            android:layout_marginVertical="10sp"
+            tools:ignore="MissingConstraints"
+            />
 
 
     </LinearLayout>

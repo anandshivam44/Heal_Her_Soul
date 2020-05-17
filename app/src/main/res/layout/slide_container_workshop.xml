@@ -9,23 +9,23 @@ android:layout_height="match_parent"
         android:id="@+id/imageSlide_workshop"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        app:riv_corner_radius="7dp"
         android:adjustViewBounds="true"
-        app:riv_corner_radius="12dp"
-        android:layout_centerInParent="true"
         android:src="@drawable/fig_3"
-        android:alpha=".5"
+        android:layout_alignParentTop="true"
+        android:alpha=".75"
         >
 
     </com.makeramen.roundedimageview.RoundedImageView>
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_workshop"
-        android:layout_centerInParent="true"
         android:text="sample text"
-        android:textSize="25sp"
+        android:textSize="15sp"
         android:gravity="center_horizontal"
-        android:textColor="#FFFFFF"
+        android:textColor="#2f3542"
+        android:layout_below="@+id/imageSlide_workshop"
         android:fontFamily="sans-serif-condensed-light"
         />
 
