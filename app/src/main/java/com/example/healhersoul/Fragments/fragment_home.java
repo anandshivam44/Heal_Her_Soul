@@ -2,6 +2,10 @@ package com.example.healhersoul.Fragments;
 
 import android.os.Bundle;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -11,6 +15,7 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +50,10 @@ public class fragment_home extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        LocalDate dateBefore = LocalDate.of(2020, Month.JANUARY, 1);
+        LocalDate dateAfter = LocalDate.of(2020, Month.MAY, 2);
+        long noOfDaysBetween = ChronoUnit.DAYS.between(dateBefore, dateAfter);
 
         List<SliderItem> sliderItemsForArticles = new ArrayList<>();//fragment data temp
         sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_1));
@@ -97,9 +106,12 @@ public class fragment_home extends Fragment {
             }
         });
 /**setting values to progress bar*/
-        arcProgress=getActivity().findViewById(R.id.arc_progress);
-        arcProgress.setProgress(40);
-       arcProgress.setStrokeWidth(40);
+        arcProgress = getActivity().findViewById(R.id.arc_progress);
+        int d= (int) ((28000.0 - noOfDaysBetween*100) / 280.0);
+        arcProgress.setProgress(d) ;//
+        Log.d("MyTag", "Days : " + d);
+
+        arcProgress.setStrokeWidth(70);
 
 
     }
