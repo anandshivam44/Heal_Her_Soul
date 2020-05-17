@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_workshop()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
 

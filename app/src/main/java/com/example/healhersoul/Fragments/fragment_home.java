@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ToxicBakery.viewpager.transforms.RotateUpTransformer;
+import com.example.healhersoul.Adapters.SliderAdapter_article_in_home;
 import com.example.healhersoul.Adapters.SliderAdapter_workshop;
 import com.example.healhersoul.Objects.SliderItem;
 import com.example.healhersoul.R;
@@ -23,8 +25,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class fragment_home extends Fragment {
-    private ViewPager2 viewPager2;
-    private Handler SliderHandler=new Handler();
+
+    private ViewPager2 viewPager2ForArticle;
+    private Handler SliderHandlerForArticle = new Handler();
+
+    private ViewPager2 viewPager2ForWorkshop;
+    private Handler SliderHandlerForWorkshop = new Handler();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,60 +44,77 @@ public class fragment_home extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        viewPager2 = getActivity().findViewById(R.id.viewPagerImageSlider_workshop);
-        List<SliderItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItem("workshop on nutrition ",R.drawable.image_10));
-        sliderItems.add(new SliderItem("workshop on chlid care",R.drawable.parents123));
-        sliderItems.add(new SliderItem("workshop on parenting",R.drawable.pregnant));
-        sliderItems.add(new SliderItem("workshop on daily routine",R.drawable.image_5));
-        sliderItems.add(new SliderItem("workshop on diet",R.drawable.image_1));
+        List<SliderItem> sliderItemsForArticles = new ArrayList<>();//fragment data temp
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_1));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_2));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_3));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_4));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_5));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_6));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_7));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_8));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_9));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_10));
+        sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_11));
+        viewPager2ForArticle = getActivity().findViewById(R.id.viewPagerImageSlider_article);
+        viewPager2ForArticle.setAdapter(new SliderAdapter_article_in_home(sliderItemsForArticles, viewPager2ForArticle));
+        viewPager2ForArticle.setPageTransformer(true,new Margin);
 
 
+        //workshop part below
+//        viewPager2ForWorkshop = getActivity().findViewById(R.id.viewPagerImageSlider_workshop);
+//        List<SliderItem> sliderItemsForWorkshop = new ArrayList<>();
+//        sliderItemsForWorkshop.add(new SliderItem("workshop on nutrition ", R.drawable.image_10));
+//        sliderItemsForWorkshop.add(new SliderItem("workshop on chlid care", R.drawable.parents123));
+//        sliderItemsForWorkshop.add(new SliderItem("workshop on parenting", R.drawable.pregnant));
+//        sliderItemsForWorkshop.add(new SliderItem("workshop on daily routine", R.drawable.image_5));
+//        sliderItemsForWorkshop.add(new SliderItem("workshop on diet", R.drawable.image_1));
+//
+//        viewPager2ForWorkshop.setAdapter(new SliderAdapter_workshop(sliderItemsForWorkshop, viewPager2ForWorkshop));
+//
+//        viewPager2ForWorkshop.setClipToPadding(false);
+//        viewPager2ForWorkshop.setClipChildren(false);
+//        viewPager2ForWorkshop.setOffscreenPageLimit(3);
+//        viewPager2ForWorkshop.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+//
+//        CompositePageTransformer compositePageTransformerForWorkshop = new CompositePageTransformer();
+//        compositePageTransformerForWorkshop.addTransformer(new MarginPageTransformer(40));
+//        compositePageTransformerForWorkshop.addTransformer(new ViewPager2.PageTransformer() {
+//            @Override
+//            public void transformPage(@NonNull View page, float position) {
+//                float r = 1 - Math.abs(position);
+//                page.setScaleY(0.85f + r * 0.15f);
+//            }
+//        });
+//        viewPager2ForWorkshop.setPageTransformer(compositePageTransformerForWorkshop);
+//        viewPager2ForWorkshop.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                super.onPageSelected(position);
+//                SliderHandlerForWorkshop.removeCallbacks(SliderRunnble);
+//                SliderHandlerForWorkshop.postDelayed(SliderRunnble, 2000); //2 sec delay
+//            }
+//        });
 
 
-        viewPager2.setAdapter(new SliderAdapter_workshop(sliderItems, viewPager2));
-
-        viewPager2.setClipToPadding(false);
-        viewPager2.setClipChildren(false);
-        viewPager2.setOffscreenPageLimit(3);
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
-        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r * 0.15f);
-            }
-        });
-        viewPager2.setPageTransformer(compositePageTransformer);
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                SliderHandler.removeCallbacks(SliderRunnble);
-                SliderHandler.postDelayed(SliderRunnble,2000); //2 sec delay
-            }
-        });
     }
 
-    private Runnable SliderRunnble=new Runnable() {
+    private Runnable SliderRunnble = new Runnable() {
         @Override
         public void run() {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem()+1);
+            viewPager2ForWorkshop.setCurrentItem(viewPager2ForWorkshop.getCurrentItem() + 1);
         }
     };
 
     @Override
     public void onPause() {
         super.onPause();
-        SliderHandler.removeCallbacks(SliderRunnble);
+        SliderHandlerForWorkshop.removeCallbacks(SliderRunnble);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        SliderHandler.postDelayed(SliderRunnble,2000);
+        SliderHandlerForWorkshop.postDelayed(SliderRunnble, 2000);
     }
 }
