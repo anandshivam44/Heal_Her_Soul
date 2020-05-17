@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.healhersoul.CollectDetailsActivity;
 import com.example.healhersoul.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,14 +29,14 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class LoginPage extends AppCompatActivity implements
-        AdapterView.OnItemSelectedListener{
+        AdapterView.OnItemSelectedListener {
     private static final String TAG = "MyTag";
-    String countryCode[] = {"+91","+234"};
+    String countryCode[] = {"+91", "+234"};
     String country;
     Spinner spinner;
     String phoneNumber;
 
-    private EditText et_phoneNumber,et_otp;
+    private EditText et_phoneNumber, et_otp;
     private Button SignInButton;
     private Button sendOTPButton;
     private String mVerificationId;
@@ -48,7 +49,7 @@ public class LoginPage extends AppCompatActivity implements
     protected void onStart() {
         super.onStart();
         mAuth = FirebaseAuth.getInstance();
-        if(mAuth.getUid()!=null){
+        if (mAuth.getUid() != null) {
 //            Intent intent = new Intent(otp.this, DrawerActivity.class);
 //            Log.d(TAG, "Inside OTP\n\n"+"UID " + mAuth.getUid() + " \nCurrent User " + mAuth.getCurrentUser() + " \nPhone Number " + mAuth.getCurrentUser().getPhoneNumber());
 //            startActivity(intent);
@@ -63,16 +64,16 @@ public class LoginPage extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        et_phoneNumber=findViewById(R.id.edit_text_phone);
-        et_otp=findViewById(R.id.edit_text_otp);
-        spinner=findViewById(R.id.spinner_country_code);
-        SignInButton=findViewById(R.id.sign_in);
-        sendOTPButton=findViewById(R.id.bt_send_otp);
-        skip_button=findViewById(R.id.skip_login);
+        et_phoneNumber = findViewById(R.id.edit_text_phone);
+        et_otp = findViewById(R.id.edit_text_otp);
+        spinner = findViewById(R.id.spinner_country_code);
+        SignInButton = findViewById(R.id.sign_in);
+        sendOTPButton = findViewById(R.id.bt_send_otp);
+        skip_button = findViewById(R.id.skip_login);
 
 
         spinner.setOnItemSelectedListener(this);
-        ArrayAdapter aa = new ArrayAdapter(this,android.R.layout.simple_spinner_item,countryCode);
+        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, countryCode);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);
         spinner.setSelection(0);
@@ -80,7 +81,7 @@ public class LoginPage extends AppCompatActivity implements
         sendOTPButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                phoneNumber=et_phoneNumber.getText().toString();
+                phoneNumber = et_phoneNumber.getText().toString();
                 initiateLoginProcess();
             }
         });
@@ -88,9 +89,9 @@ public class LoginPage extends AppCompatActivity implements
         skip_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginPage.this, MainActivity.class);
+                Intent intent = new Intent(LoginPage.this, CollectDetailsActivity.class);
 //            Log.d(TAG, "Inside OTP\n\n"+"UID " + mAuth.getUid() + " \nCurrent User " + mAuth.getCurrentUser() + " \nPhone Number " + mAuth.getCurrentUser().getPhoneNumber());
-            startActivity(intent);
+                startActivity(intent);
             }
         });
         SignInButton.setOnClickListener(new View.OnClickListener() {
@@ -104,11 +105,12 @@ public class LoginPage extends AppCompatActivity implements
 
     private void initiateLoginProcess() {
         Log.d(TAG, "lower button clicked");
-        if (!et_phoneNumber.getText().toString().equals("")){
+        if (!et_phoneNumber.getText().toString().equals("")) {
             et_otp.setHint("Otp Sent");
             sendVerificationCode(phoneNumber);
         }
     }
+
     private void sendVerificationCode(String phone) {   // method for getting sms.........
         Log.d(TAG, "Just entered send verification code");
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
@@ -130,7 +132,7 @@ public class LoginPage extends AppCompatActivity implements
             //Getting the code sent by SMS
             String code = phoneAuthCredential.getSmsCode();                                          //code for auto detection .....
             Toast.makeText(getApplicationContext(), "SMS Reading Done", Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "Code Received by app code: "+code);
+            Log.d(TAG, "Code Received by app code: " + code);
 
             //sometime the code is not detected automatically
             //in this case the code will be null
@@ -140,8 +142,7 @@ public class LoginPage extends AppCompatActivity implements
                 et_otp.setText(code);
                 //verifying the code
                 verifyVerificationCode(code);                                               //function call for verifying code using autodetected code
-            }
-            else{
+            } else {
                 signInWithPhoneAuthCredential(phoneAuthCredential);
 
             }
@@ -150,7 +151,7 @@ public class LoginPage extends AppCompatActivity implements
 
         @Override
         public void onVerificationFailed(FirebaseException e) {
-            Log.d(TAG, "Verification Failed "+e.getMessage());
+            Log.d(TAG, "Verification Failed " + e.getMessage());
             Toast.makeText(LoginPage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
@@ -158,7 +159,7 @@ public class LoginPage extends AppCompatActivity implements
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             Log.d(TAG, "Entered Code sent");
             super.onCodeSent(s, forceResendingToken);
-            Toast.makeText(getApplicationContext(), "CODE SENT s="+s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "CODE SENT s=" + s, Toast.LENGTH_SHORT).show();
 
             //storing the verification id that is sent to the user
             mVerificationId = s;
@@ -220,12 +221,12 @@ public class LoginPage extends AppCompatActivity implements
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        country=countryCode[i];
+        country = countryCode[i];
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-        country=countryCode[0];
+        country = countryCode[0];
 
     }
 }
