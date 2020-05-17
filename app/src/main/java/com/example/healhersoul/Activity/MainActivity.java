@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.healhersoul.Fragments.Fragment_profile;
+import com.example.healhersoul.Fragments.fragment_about_us;
 import com.example.healhersoul.Fragments.fragment_articles;
 import com.example.healhersoul.Fragments.fragment_chat_bot;
 import com.example.healhersoul.Fragments.fragment_donate;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_about_us:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new about_us()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_about_us()).commit();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

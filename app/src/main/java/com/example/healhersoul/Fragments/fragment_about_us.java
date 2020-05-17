@@ -1,4 +1,4 @@
-package com.example.healhersoul.Activity;
+package com.example.healhersoul.Fragments;
 
 import android.os.Bundle;
 
@@ -14,11 +14,12 @@ import com.example.healhersoul.R;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 
-public class about_us extends Fragment {
+public class fragment_about_us extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().setTitle("About us");
         return inflater.inflate(R.layout.fragment_about, container, false);
     }
 
