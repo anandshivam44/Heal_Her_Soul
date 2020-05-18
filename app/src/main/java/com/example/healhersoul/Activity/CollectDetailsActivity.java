@@ -1,4 +1,4 @@
-package com.example.healhersoul;
+package com.example.healhersoul.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 
-import com.example.healhersoul.Activity.LoginPage;
-import com.example.healhersoul.Activity.MainActivity;
+import com.example.healhersoul.R;
 
 public class CollectDetailsActivity extends AppCompatActivity {
 
