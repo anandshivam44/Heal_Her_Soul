@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Activity.CollectDetailsActivity"></activity>
+
         <activity
             android:name=".Activity.Logo"
             android:theme="@style/AppTheme.NoActionBar">
