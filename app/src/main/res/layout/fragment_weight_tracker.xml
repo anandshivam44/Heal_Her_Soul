@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.fragment_weight_tracker">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph_view"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="30dp"
+        android:layout_height="400dp"/>
+<!--    <EditText-->
+<!--        android:id="@+id/point_x"-->
+<!--        android:hint="X"-->
+<!--        android:inputType="number"-->
+<!--        android:gravity="center_horizontal"-->
+<!--        android:layout_width="90sp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/graph_view"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginLeft="75sp"-->
+<!--        />-->
+    <EditText
+        android:id="@+id/point_y"
+        android:hint="Enter Weight"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:inputType="number"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/graph_view"
+
+        />
+    <Button
+        android:id="@+id/add_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Weight"
+        android:textAllCaps="false"
+        android:layout_toRightOf="@+id/point_y"
+        android:layout_below="@+id/graph_view"
+
+        />
+
+</RelativeLayout>

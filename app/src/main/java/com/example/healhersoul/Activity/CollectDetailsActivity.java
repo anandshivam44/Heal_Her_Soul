@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Html;
+//import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +29,7 @@ public class CollectDetailsActivity extends AppCompatActivity {
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#FFFFFF"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>      Select Date </font>"));
+//        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>      Select Date </font>"));
 
         calendarView = findViewById(R.id.calendar_view);
         nextButton = findViewById(R.id.nextButton);

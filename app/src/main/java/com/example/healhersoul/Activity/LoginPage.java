@@ -72,7 +72,7 @@ public class LoginPage extends AppCompatActivity implements
 
 
         spinner.setOnItemSelectedListener(this);
-        ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_spinner_item, countryCode);
+        ArrayAdapter<String> aa = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryCode);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(aa);
         spinner.setSelection(0);

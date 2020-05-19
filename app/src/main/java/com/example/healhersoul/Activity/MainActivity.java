@@ -24,6 +24,7 @@ import com.example.healhersoul.Fragments.fragment_forum;
 import com.example.healhersoul.Fragments.fragment_home;
 import com.example.healhersoul.Fragments.fragment_telephone_directory;
 import com.example.healhersoul.Fragments.fragment_tools;
+import com.example.healhersoul.Fragments.fragment_weight_tracker;
 import com.example.healhersoul.Fragments.fragment_workshop;
 import com.example.healhersoul.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_weight_tracker()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
 

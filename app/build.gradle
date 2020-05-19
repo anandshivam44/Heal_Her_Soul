@@ -4,6 +4,10 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     buildToolsVersion "29.0.3"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.example.healhersoul"
@@ -12,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
 
     buildTypes {
@@ -41,22 +45,22 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.2.0-alpha06'
-    implementation "com.airbnb.android:lottie:3.4.0"
+    implementation "com.airbnb.android:lottie:3.4.0" // Lottie for json animation by AirBnB
     implementation 'com.synnapps:carouselview:0.1.4'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'com.github.msayan:tutorial-view:v1.0.10'
-    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.1'
+    implementation 'com.github.msayan:tutorial-view:v1.0.10' // AppInfo Activity
+    implementation 'com.squareup.retrofit2:retrofit:2.8.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.8.2'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation 'com.facebook.shimmer:shimmer:0.5.0'
-    implementation 'com.github.lguipeng:BubbleView:1.0.1'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'//Facebook's shimmer effect
+    implementation 'com.github.lguipeng:BubbleView:1.0.1'// Bubble View to display messages
     implementation 'com.firebaseui:firebase-ui:3.1.0'//do not upgrade this
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation "com.makeramen:roundedimageview:2.3.0"
-    implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:2.0.24'
-    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
-    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'//Youtube Player
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'// Circle or Arc Progress Bar
+    implementation 'com.jjoe64:graphview:4.2.2'//Graph View
 
 
 }
