@@ -1,6 +1,10 @@
 package com.example.healhersoul.Adapters;
 
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,13 +12,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.healhersoul.AlertReceiver;
 import com.example.healhersoul.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class adapter_workshop extends RecyclerView.Adapter<adapter_workshop.ViewHolderClass> {
 
@@ -80,12 +87,47 @@ public class adapter_workshop extends RecyclerView.Adapter<adapter_workshop.View
             if (count == true) {//improper implementation
                 btn_remainder.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.vector_notifications_none, 0);
                 count = !count;
+                stopNotification();
+
             } else {
                 btn_remainder.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.vector_notifications_active, 0);
                 count = !count;
+                Calendar calendar=Calendar.getInstance();
+                //TODO: instead of manual input of DATE and TIME we need to fecth the details from server and pass those values here:
+                //TODO: here we need to pass DATE and TIME as parameter,in future for different workshops.
+                calendar.set(Calendar.HOUR_OF_DAY,15); //setting the hours in 24 hour format
+                calendar.set(Calendar.MINUTE,45);       //setting the minutes
+                calendar.set(Calendar.SECOND,0);//setting the second
+//        calendar.set(Calendar.DAY_OF_MONTH,22);
+//        calendar.set(Calendar.MONTH,5);
+//        calendar.set(Calendar.YEAR,2020);
+                sendNotification(calendar);
+
+            }
+        }
+
+        private  void sendNotification(Calendar c)
+        {
+            AlarmManager alarmManager=(AlarmManager) itemView.getContext().getSystemService(Context.ALARM_SERVICE);
+            Intent intent=new Intent(itemView.getContext(), AlertReceiver.class);
+            PendingIntent pendingIntent= PendingIntent.getBroadcast(itemView.getContext(),1,intent,0);/**request code for each pending intent should be different.*/
+            if(c.before(Calendar.getInstance()))//checking the selected time with current time ,if it is before or not
+            {
+                c.add(Calendar.DATE,1);//alarm will start on next day
             }
 
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,c.getTimeInMillis(),pendingIntent);
+            Toast.makeText(itemView.getContext(),"notificatio on",Toast.LENGTH_SHORT).show();
+        }
 
+        private void stopNotification()
+        {
+            AlarmManager alarmManager=(AlarmManager) itemView.getContext().getSystemService(Context.ALARM_SERVICE);
+            Intent intent=new Intent(itemView.getContext(), AlertReceiver.class);
+            PendingIntent pendingIntent= PendingIntent.getBroadcast(itemView.getContext(),1,intent,0);/**request code for each pending intent should be different.*/
+
+            alarmManager.cancel(pendingIntent);
+            Toast.makeText(itemView.getContext(),"notificatio off",Toast.LENGTH_SHORT).show();
         }
     }
 //    public interface ArrowButtonClicked{
