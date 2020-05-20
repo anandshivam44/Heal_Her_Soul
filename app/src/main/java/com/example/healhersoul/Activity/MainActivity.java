@@ -31,9 +31,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //    private CarouselView carouselView;
-//    private Button next;
+    //    private Button next;
     private int[] sampleImages = {R.drawable.master, R.drawable.consultant, R.drawable.counseling, R.drawable.childmum,
             R.drawable.parents123};
 
@@ -60,19 +62,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-//        bottomNav = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-//        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)
-//                bottomNav .getLayoutParams();
-//        layoutParams.setBehavior(new BottomNavigationViewBehavior());
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_weight_tracker()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
-
-//        carouselView = findViewById(R.id.carouselView2);
-//        carouselView.setPageCount(sampleImages.length);
-//        carouselView.setImageListener(imageListener);
     }
 
     @Override
@@ -129,18 +123,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
-                    boolean b=false;
+                    boolean b = false;
 
                     switch (item.getItemId()) {
                         case R.id.nav_forum:
-                            b=true;
+                            b = true;
                             frag_art = false;
                             selectedFragment = new fragment_forum();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                     selectedFragment).commit();
                             break;
                         case R.id.nav_home:
-                            b=true;
+                            b = true;
                             frag_art = false;
                             selectedFragment = new fragment_home();
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -155,11 +149,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 selectedFragment = new fragment_chat_bot();
                                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                                         selectedFragment).commit();
-                                b=true;
+                                b = true;
                             }
                             break;
                     }
-
 
 
                     return b;
@@ -168,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
+
 
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -178,10 +172,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             super.onBackPressed();
         }
     }
-//    ImageListener imageListener = new ImageListener() {
-//        @Override
-//        public void setImageForPosition(int position, ImageView imageView) {
-//            imageView.setImageResource(sampleImages[position]);
-//        }
-//    };
 }

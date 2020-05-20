@@ -3,14 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     tools:context=".Activity.CollectDetailsActivity">
 
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:orientation="vertical"-->
-    <!--        android:layout_margin="10dp"-->
-    <!--        >-->
     <TextView
         android:layout_alignParentTop="true"
         android:id="@+id/select_date"
@@ -26,10 +21,12 @@
         android:layout_below="@+id/select_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="13dp"
-        android:layout_marginVertical="13dp"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="25dp"
         android:background="@drawable/calendar_background"
-        android:elevation="13dp"
+        android:elevation="5dp"
+        android:translationZ="10dp"
+
         />
 
     <Button
@@ -41,6 +38,5 @@
         android:textAllCaps="false"
         android:layout_centerHorizontal="true"
         />
-    <!--    </RelativeLayout>-->
 
 </RelativeLayout>

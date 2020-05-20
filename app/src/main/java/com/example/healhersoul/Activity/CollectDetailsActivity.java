@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import com.example.healhersoul.R;
 
@@ -27,7 +28,7 @@ public class CollectDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collect_details);
         ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("#FFFFFF"));
+                = new ColorDrawable(Color.parseColor("#574b90"));
         getSupportActionBar().setBackgroundDrawable(colorDrawable);
 //        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000000'>      Select Date </font>"));
 
@@ -40,7 +41,7 @@ public class CollectDetailsActivity extends AppCompatActivity {
                 dd = i2;
                 mm = i1 + 1;//month is based on index
                 yy = i;
-                Log.d(TAG, " Date " + i + " : " + i1 + " : " + i2);
+                Toast.makeText(CollectDetailsActivity.this, dd+"/"+mm+"/"+yy, Toast.LENGTH_SHORT).show();
             }
         });
         nextButton.setOnClickListener(new View.OnClickListener() {

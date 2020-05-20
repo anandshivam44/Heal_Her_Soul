@@ -28,5 +28,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="aboutUs">The World Health Organization (WHO) is a specialized agency of the United Nations responsible for international public health.[1] The WHO Constitution, which establishes the agency \'s governing structure and principles, states its main objective as "the attainment by all peoples of the highest possible level of health."[2] It is headquartered in Geneva, Switzerland, with six semi-autonomous regional offices and 150 field offices worldwide.The WHO was established in 7 April 1948, which is commemorated as World Health Day.[3] The first meeting of the World Health Assembly (WHA), the agency\'s governing body, took place on 24 July 1948. The WHO incorporated the assets, personnel, and duties of the League of Nations\' Health Organisation and the Office International d\'Hygiène Publique, including the International Classification of Diseases.[4] Its work began in earnest in 1951 following a significant infusion of financial and technical resources.[5]The WHO\'s broad mandate includes advocating for universal healthcare, monitoring public health risks, coordinating responses to health emergencies, and promoting human health and well being.[6] It provides technical assistance to countries, sets international health standards and guidelines, and collects data on global health issues through the World Health Survey. Its flagship publication, the World Health Report, provides expert assessments of global health topics and health statistics on all nations.[7] The WHO also serves as a forum for summits and discussions on health issues.[1]The WHO has played a leading role in several public health achievements, most notably the eradication of smallpox, the near-eradication of polio, and the development of an Ebola vaccine. Its current priorities include communicable diseases, particularly HIV/AIDS, Ebola, malaria and tuberculosis; non-communicable diseases such as heart disease and cancer; healthy diet, nutrition, and food security; occupational health; and substance abuse.</string>
+    <string name="title_activity_collect__name_phone">Collect_NamePhone</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

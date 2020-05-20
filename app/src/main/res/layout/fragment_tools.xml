@@ -19,12 +19,12 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
-            <Button
+            <ImageButton
                 android:id="@+id/weight_tracker"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@drawable/vector_graph"
                 android:backgroundTint="#cceb3b5a"
+                android:background="@drawable/background_graph"
                 />
 
             <TextView

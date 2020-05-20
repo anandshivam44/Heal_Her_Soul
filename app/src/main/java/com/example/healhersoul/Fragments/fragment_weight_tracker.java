@@ -77,7 +77,9 @@ public class fragment_weight_tracker extends Fragment {
                 Y.setText("");
             }
         });
-
-
+    }
+    public boolean onBackPressed() {
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_tools()).commit();
+        return false;
     }
 }

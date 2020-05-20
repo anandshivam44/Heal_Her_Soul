@@ -70,7 +70,6 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#2674b9ff"
                 android:orientation="horizontal"
                 android:padding="5dp">
 
@@ -81,11 +80,13 @@
                     android:layout_margin="10dp"
                     android:orientation="vertical">
 
-                    <Button
+                    <ImageButton
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/vector_faq"
-                        android:backgroundTint="#cceb3b5a"
+                        android:src="@drawable/vector_faq"
+                        android:scaleType="centerCrop"
+                        android:tint="#eb3b5a"
+                        android:background="@drawable/background_home_faq"
                         />
 
                     <TextView
@@ -106,7 +107,7 @@
                     <Button
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/vector_articles"
+                        android:background="@drawable/background_home_read_articles"
                         android:backgroundTint="#cceb3b5a"
                         />
 
@@ -130,7 +131,7 @@
                         android:backgroundTint="#cceb3b5a"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:background="@drawable/vector_workshop" />
+                        android:background="@drawable/background_home_workshop" />
 
                     <TextView
                         android:layout_width="wrap_content"
