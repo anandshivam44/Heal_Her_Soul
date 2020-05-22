@@ -8,12 +8,14 @@ android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageSlide_workshop"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         app:riv_corner_radius="7dp"
         android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/fig_3"
         android:layout_alignParentTop="true"
         android:alpha=".75"
+
         >
 
     </com.makeramen.roundedimageview.RoundedImageView>
