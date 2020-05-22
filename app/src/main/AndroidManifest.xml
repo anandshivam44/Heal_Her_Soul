@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,44 +15,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         <activity
             android:name=".Activity.Collect_NamePhone"
             android:label="@string/title_activity_collect__name_phone"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         <activity android:name=".Activity.CollectDetailsActivity">
 
         </activity>
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
         <activity
             android:name=".Activity.Logo"
             android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
-        <activity
-            android:name=".Activity.LoginPage"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
 
-
         </activity>
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        <activity
+            android:name=".Activity.LoginPage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        <activity
+            android:name=".Activity.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         <activity android:name=".Activity.IntroPage" />
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <receiver android:name=".AlertReceiver"/>
+        <receiver android:name=".AlertReceiver" />
     </application>
 
 </manifest>

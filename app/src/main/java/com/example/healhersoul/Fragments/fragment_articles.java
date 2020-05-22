@@ -34,7 +34,7 @@ public class fragment_articles extends Fragment {
 //        getActivity().setTitle("Articles");
 //        getActivity().(Window.FEATURE_NO_TITLE); //will hide the title
 //        getSupportActionBar().hide(); // hide the title bar
-        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
         BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
 //        navBar.setItemIconSize(0);
         return inflater.inflate(R.layout.fragment_articles, container, false);

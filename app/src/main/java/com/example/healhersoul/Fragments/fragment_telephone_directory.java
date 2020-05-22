@@ -47,7 +47,6 @@ public class fragment_telephone_directory extends Fragment implements adapterFor
         number.add("7979716172");
         name.add("Ambulance");
         number.add("102");
-
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_view_telephone_directory);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new adapterForTelephoneDirectory(this, name, number);
