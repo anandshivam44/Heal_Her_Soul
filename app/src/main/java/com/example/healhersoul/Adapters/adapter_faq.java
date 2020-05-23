@@ -1,6 +1,8 @@
 package com.example.healhersoul.Adapters;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +21,9 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
 
     ArrayList<String> question;
     ArrayList<String> answer;
-//    fragment_faq context;
-    String TAG="MyTag";
+    int toBeCollapsed = 0;
+    //    fragment_faq context;
+    String TAG = "MyTag";
 
     public adapter_faq(ArrayList<String> question, ArrayList<String> answer) {
         this.question = question;
@@ -66,32 +69,47 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
         return question.size();
     }
 
-    protected class ViewHolderClass extends RecyclerView.ViewHolder implements View.OnClickListener{
+    protected class ViewHolderClass extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView_question;
         TextView textView_answer;
         ImageButton imageButton;
+        TextView toBeCollapsedTextView;
 
         public ViewHolderClass(@NonNull View itemView) {//execution order 3
             super(itemView);
             textView_answer = itemView.findViewById(R.id.faq_text_answer);
             textView_question = itemView.findViewById(R.id.faq_text_question);
-            imageButton=itemView.findViewById(R.id.arrow_down);
+            imageButton = itemView.findViewById(R.id.arrow_down);
             imageButton.setOnClickListener(this);
+            toBeCollapsedTextView = itemView.findViewById(R.id.faq_text_answer);
         }
 
         @Override
         public void onClick(View view) {
-            Log.d(TAG, "Button Clicked "+view.getId());
-            if (textView_answer.getVisibility()==View.GONE){ //expand on clicking
+            Log.d(TAG, "Button Clicked " + view.getId());
+            if (textView_answer.getVisibility() == View.GONE) { //expand on clicking
+//                if (getAdapterPosition() != toBeCollapsed) {
+//                    notifyItemChanged(toBeCollapsed);
+//                }
+//                toBeCollapsed = getAdapterPosition();
                 textView_answer.setVisibility(View.VISIBLE);
+//                textView_answer.animate()
+//                        .translationY(view.getHeight())
+//                        .alpha(1.0f)
+//                        .setDuration(300)
+//                        .setListener(new AnimatorListenerAdapter() {
+//                            @Override
+//                            public void onAnimationEnd(Animator animation) {
+//                                super.onAnimationEnd(animation);
+//                                textView_answer.setVisibility(View.VISIBLE);
+//                            }
+//                        });
                 imageButton.setImageResource(R.drawable.vector_arror_up);
-            }
-            else{
+            } else {
                 textView_answer.setVisibility(View.GONE);//collapse on clicking
                 imageButton.setImageResource(R.drawable.vector_arrow_down);
 
             }
-
 
         }
     }

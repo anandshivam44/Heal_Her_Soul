@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
     android:layout_marginLeft="10dp"
     android:padding="5dp">
 
@@ -11,6 +12,7 @@
         android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
         android:gravity="center_vertical"
         android:layout_toStartOf="@+id/arrow_down"
         android:text="Loading Text" />
@@ -20,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:animateLayoutChanges="true"
         android:background="#00ffffff"
         android:padding="5dp"
         android:layout_marginRight="10dp"
@@ -31,9 +34,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/faq_text_question"
         android:text="Loding Answers"
-        android:visibility="gone"
         android:textColor="#3C4054"
+        android:textSize="16sp"
         android:animateLayoutChanges="true"
+        android:justificationMode="inter_word"
+        android:paddingRight="7sp"
+        android:visibility="gone"
+        android:paddingVertical="5sp"
+        android:paddingHorizontal="7sp"
+        android:background="@drawable/faq_answer_background"
+        android:layout_marginRight="15sp"
         />
 
 </RelativeLayout>

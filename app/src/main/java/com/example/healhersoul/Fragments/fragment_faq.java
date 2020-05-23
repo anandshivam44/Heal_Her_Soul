@@ -56,11 +56,18 @@ public class fragment_faq extends Fragment {
         question.add("Question 15");
         question.add("Question 16");
 
-        answer.add("Answer 0");
+        answer.add("Answer 0 " +
+                "Now, more than ever before, we have tools that help us to harness the power of data. To collect, process and analyze data faster than ever before. To understand the world – and to change it for the better.");
         answer.add("Answer 1");
         answer.add("Answer 2");
-        answer.add("Answer 3");
-        answer.add("Answer 4");
+        answer.add("Answer 3  This year’s World Health Statistics report makes clear that the global efforts in recent decades have been paying off. Looking at the most up-to-date data we have on some of these vital SDG indicators, it reveals health trends across Member States, regions and the entire world. ");
+        answer.add("Answer 4 This year’s World Health Statistics report makes clear that the global efforts in recent decades have been paying off. Looking at the most up-to-date data we have on some of these vital SDG indicators, it reveals health trends across Member States, regions and the entire world. \n" +
+                "\n" +
+                "The data shows that we are continuing to make enormously encouraging progress in many ways – but also that we lack progress in other ways. Inequality persists, with some regions still falling behind. We must continue to work together to remain focused on our goals. \n" +
+                "\n" +
+                "Data blindspots – lack of available data, infrequency of data collection – remain an urgent challenge but also a great opportunity. Because wherever we can measure, we can make progress. \n" +
+                "\n" +
+                "This report gives us further galvanising evidence, not only of what has been achieved but what can be.");
         answer.add("Answer 5");
         answer.add("Answer 6");
         answer.add("Answer 7");

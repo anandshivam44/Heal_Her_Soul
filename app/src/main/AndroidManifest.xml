@@ -15,33 +15,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <!--        Activity 1  LOGO-->
+        <activity
+            android:name=".Activity.Logo"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+
+        <!--        Activity 2  -->
+        <activity android:name=".Activity.IntroPage">
+        </activity>
+
+
+        <!--        Activity 3  LOGIN-->
+        <activity
+            android:name=".Activity.LoginPage"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+
+        <!--        Activity 4-->
         <activity
             android:name=".Activity.Collect_NamePhone"
             android:label="@string/title_activity_collect__name_phone"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <!--        Activity 5-->
         <activity android:name=".Activity.CollectDetailsActivity">
 
         </activity>
-        <activity
-            android:name=".Activity.Logo"
-            android:theme="@style/AppTheme.NoActionBar">
 
-        </activity>
 
-        <activity
-            android:name=".Activity.LoginPage"
-            android:theme="@style/AppTheme.NoActionBar" >
-
-        </activity>
-
+        <!--        Activity 6 Main Activity-->
         <activity
             android:name=".Activity.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-        <activity android:name=".Activity.IntroPage" >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
-
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
