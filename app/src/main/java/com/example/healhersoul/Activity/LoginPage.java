@@ -3,10 +3,15 @@ package com.example.healhersoul.Activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -58,6 +63,7 @@ public class LoginPage extends AppCompatActivity implements
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,10 +99,35 @@ public class LoginPage extends AppCompatActivity implements
                 startActivity(intent);
             }
         });
-        SignInButton.setOnClickListener(new View.OnClickListener() {
+//        SignInButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                verifyVerificationCode(et_otp.getText().toString());
+//            }
+//        });
+        SignInButton.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View view) {
-                verifyVerificationCode(et_otp.getText().toString());
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+
+                if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    Animation animation_zoom_in = AnimationUtils.loadAnimation(LoginPage.this, R.anim.zoomin);//make it bigger
+                    view.startAnimation(animation_zoom_in);
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            verifyVerificationCode(et_otp.getText().toString());
+                        }
+                    }, 300);
+
+                    return true;
+                }
+                else if (motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                    Animation animation_zoom_out = AnimationUtils.loadAnimation(LoginPage.this, R.anim.zoomout);// make it smaller
+                    view.startAnimation(animation_zoom_out);
+                    return true;
+                }
+                return false;
             }
         });
 

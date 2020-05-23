@@ -21,7 +21,7 @@ public class IntroPage extends TutorialActivity {
                 new Step.Builder()
                         .setTitle(getString(R.string.page_0_title))
                         .setContent(getString(R.string.page_0_content))
-                        .setBackgroundColor(Color.parseColor("#FF0957"))//  #CA70F3
+                        .setBackgroundColor(Color.parseColor("#28FF0957"))//  #CA70F3
                         .setDrawable(R.drawable.fig_del)
                         .setSummary(getString(R.string.page_0_summary))
                         .build());
@@ -29,7 +29,7 @@ public class IntroPage extends TutorialActivity {
                 new Step.Builder()
                         .setTitle(getString(R.string.page_1_title))
                         .setContent(getString(R.string.page_1_content))
-                        .setBackgroundColor(Color.parseColor("#99FF0957"))
+                        .setBackgroundColor(Color.parseColor("#28ea1b85"))
                         .setDrawable(R.drawable.fig_1)
                         .setSummary(getString(R.string.page_1_summary))
                         .build());
@@ -37,7 +37,7 @@ public class IntroPage extends TutorialActivity {
                 new Step.Builder()
                         .setTitle(getString(R.string.page_2_title))
                         .setContent(getString(R.string.page_2_content))
-                        .setBackgroundColor(Color.parseColor("#00D4BA"))
+                        .setBackgroundColor(Color.parseColor("#2800D4BA"))
                         .setDrawable(R.drawable.fig_2)
                         .setSummary(getString(R.string.page_2_summary))
                         .build());
@@ -45,7 +45,7 @@ public class IntroPage extends TutorialActivity {
                 new Step.Builder()
                         .setTitle(getString(R.string.page_3_title))
                         .setContent(getString(R.string.page_3_content))
-                        .setBackgroundColor(Color.parseColor("#1098FE"))
+                        .setBackgroundColor(Color.parseColor("#281098FE"))
                         .setDrawable(R.drawable.fig_3)
                         .setSummary(getString(R.string.page_3_summary))
                         .build());
@@ -55,7 +55,7 @@ public class IntroPage extends TutorialActivity {
                         .Builder()
                         .setPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.SEND_SMS,Manifest.permission.READ_SMS,Manifest.permission.RECEIVE_SMS})
                         .setTitle(getString(R.string.page_4_title)).setContent(getString(R.string.page_4_content))
-                        .setBackgroundColor(Color.parseColor("#8BCEAB"))//#8BCEAB
+                        .setBackgroundColor(Color.parseColor("#288BCEAB"))//#8BCEAB
                         .setDrawable(R.drawable.fig_4)
                         .setSummary(getString(R.string.page_4_summary))
                         .build());
