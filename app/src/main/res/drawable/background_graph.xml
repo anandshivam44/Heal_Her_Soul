@@ -1,14 +1,23 @@
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#ff0000 ">
-    <item>
-        <shape xmlns:android="http://schemas.android.com/apk/res/android"
-            android:shape="rectangle">
-            <solid android:color="#2674b9ff"/>
-            <corners android:radius="10dp" />
-        </shape>
+    android:color="#ff0000 "
 
-    </item>
-    <item android:drawable="@drawable/vector_graph"/>
+    >
+<!--    <item>-->
+<!--        <shape xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:shape="rectangle"-->
+<!--            android:tint="#cceb3b5a"-->
+<!--            >-->
+<!--            <solid android:color="#2674b9ff"/>-->
+<!--            <corners android:radius="10dp" />-->
+<!--        </shape>-->
+
+<!--    </item>-->
+    <item android:drawable="@drawable/vector_graph"
+        android:height="150dp"
+        android:width="150dp"
+        android:gravity="center"
+
+        />
 
 </ripple>
 

@@ -24,10 +24,12 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
     int toBeCollapsed = 0;
     //    fragment_faq context;
     String TAG = "MyTag";
+    RecyclerView recyclerView;
 
-    public adapter_faq(ArrayList<String> question, ArrayList<String> answer) {
+    public adapter_faq(ArrayList<String> question, ArrayList<String> answer,RecyclerView recyclerView) {
         this.question = question;
         this.answer = answer;
+        this.recyclerView=recyclerView;
     }
 
 //    @Override
@@ -80,12 +82,14 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
             textView_answer = itemView.findViewById(R.id.faq_text_answer);
             textView_question = itemView.findViewById(R.id.faq_text_question);
             imageButton = itemView.findViewById(R.id.arrow_down);
+            itemView.setOnClickListener(this);
             imageButton.setOnClickListener(this);
             toBeCollapsedTextView = itemView.findViewById(R.id.faq_text_answer);
         }
 
         @Override
         public void onClick(View view) {
+//            recyclerView.smoothScrollToPosition(getAdapterPosition());
             Log.d(TAG, "Button Clicked " + view.getId());
             if (textView_answer.getVisibility() == View.GONE) { //expand on clicking
 //                if (getAdapterPosition() != toBeCollapsed) {

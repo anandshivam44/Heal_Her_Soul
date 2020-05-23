@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
+
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#1EACF8 ">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+            <stroke
+                android:width="1px"
+                android:color="#DADCE0" />
+
+        </shape>
+    </item>
+
+</ripple>
+
+
+
+
+
+<!--<layer-list xmlns:android="http://schemas.android.com/apk/res/android"-->
+
+<!--    >-->
+<!--    <item-->
+<!--        android:gravity="top"-->
+<!--        android:height="3dp"-->
+<!--        android:width="3dp"-->
+<!--        -->
+
+<!--        >-->
+<!--        <shape-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:shape="rectangle" >-->
+<!--            <solid android:color="#DADCE0" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item-->
+<!--        android:gravity="right"-->
+<!--        android:width="3dp"-->
+<!--        android:height="3dp"-->
+<!--        >-->
+<!--        <shape-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:shape="rectangle" >-->
+<!--            <solid android:color="#DADCE0" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item-->
+<!--        android:gravity="bottom"-->
+<!--        android:height="3dp"-->
+<!--        android:width="3dp"-->
+
+<!--        >-->
+<!--        <shape-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:shape="rectangle" >-->
+<!--            <solid android:color="#DADCE0" />-->
+<!--        </shape>-->
+<!--    </item>-->
+<!--    <item-->
+<!--        android:gravity="left"-->
+<!--        android:height="3dp"-->
+<!--        android:width="3dp"-->
+
+<!--        >-->
+<!--        <shape-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:shape="rectangle" >-->
+<!--            <solid android:color="#DADCE0" />-->
+<!--        </shape>-->
+<!--    </item>-->
+
+<!--</layer-list>-->

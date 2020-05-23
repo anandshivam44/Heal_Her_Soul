@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     android:layout_marginLeft="10dp"
+    android:background="@drawable/faq_viewholder_background"
     android:padding="5dp">
 
     <TextView

@@ -1,92 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.fragment_tools">
 
-    <RelativeLayout
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#2674b9ff"
-        android:orientation="horizontal"
-        android:padding="5dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/weight_tracker"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:backgroundTint="#cceb3b5a"
-                android:background="@drawable/background_graph"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Weight Tracker"
-                android:textColor="#018a80" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/vector_articles"
-                android:backgroundTint="#cceb3b5a"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Read Articles"
-                android:textColor="#018a80" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:orientation="vertical">
-
-            <Button
-                android:backgroundTint="#cceb3b5a"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/vector_workshop" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Workshop"
-                android:textColor="#018a80" />
-        </LinearLayout>
-
-
-        <LinearLayout
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="10dp"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:layout_alignParentBottom="true"
-            android:background="#018a80"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="#29183ED5"
+            android:elevation="10dp"
+            android:orientation="vertical">
 
-            />
-    </RelativeLayout>
+            <Button
+                android:id="@+id/weight_tracker"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_graph"
+                android:backgroundTint="#cceb3b5a"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Weight Tracker"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+
+                android:textColor="#018a80"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginVertical="10dp"
+        android:elevation="10dp"
+        android:layout_marginHorizontal="30dp"
+
+        android:layout_height="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+
+            android:background="#29183ED5"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tools_button_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_graph"
+                android:backgroundTint="#cceb3b5a"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Weight Tracker"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+
+                android:textColor="#018a80"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tools_button_2"
+                tools:layout_editor_absoluteX="16dp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="0dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="#29183ED5"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/tools_button_3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:background="@drawable/background_graph"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:backgroundTint="#cceb3b5a"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Weight Tracker"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+
+                android:textColor="#018a80"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </LinearLayout>
