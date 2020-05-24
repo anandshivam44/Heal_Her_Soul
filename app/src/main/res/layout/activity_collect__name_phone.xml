@@ -21,12 +21,75 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#abcdef"
-        >
+        android:background="#abcdef">
 
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginHorizontal="10dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="30dp"
+            android:layout_centerInParent="true"
+            >
+
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/border_edittext"
+                android:fontFamily="sans-serif-light"
+                android:hint="Enter Name"
+                android:inputType="textPersonName"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="25sp"
+
+                />
+
+            <EditText
+                android:id="@+id/txt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:background="@drawable/border_edittext"
+                android:fontFamily="sans-serif-light"
+                android:hint="Enter Phone Number"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                tools:ignore="RtlCompat" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="425dp"
+            android:elevation="@dimen/padding_10"
+            app:cardCornerRadius="100dp">
+
+            <Button
+                android:id="@+id/submit_btn"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ic_arrow_forward_black_24dp" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -35,5 +98,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
