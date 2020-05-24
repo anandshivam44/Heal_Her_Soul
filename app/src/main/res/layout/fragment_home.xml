@@ -170,6 +170,7 @@
                 />
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewPagerImageSlider_article"
+                android:transitionName="viewPagerForArticles"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -271,6 +272,7 @@
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPagerImageSlider_workshop"
+            android:transitionName="viewPagerForWorkshop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#287bed9f"

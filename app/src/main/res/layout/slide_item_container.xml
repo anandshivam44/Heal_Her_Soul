@@ -2,15 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.makeramen.roundedimageview.RoundedImageView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/imageSlide"
+
+        android:transitionName="article_image"
         android:adjustViewBounds="true"
         >
 
-    </com.makeramen.roundedimageview.RoundedImageView>
+    </ImageView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

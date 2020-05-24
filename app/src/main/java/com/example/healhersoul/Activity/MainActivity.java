@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -64,57 +65,85 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_tools()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        FragmentTransaction ft;
+        ft = getSupportFragmentManager().beginTransaction();
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+//        ft.setCustomAnimations(R.anim.fade_transition_animation_1, R.anim.fade_transition_animation_2);
+
+
         switch (item.getItemId()) {
             case R.id.nav_home:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_home()).commit();
+                ft.replace(R.id.fragment_container, new fragment_home()).commit();
                 break;
             case R.id.nav_profile:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Fragment_profile()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Fragment_profile()).commit();
+                ft.replace(R.id.fragment_container, new Fragment_profile()).commit();
                 break;
             case R.id.nav_articles:
                 frag_art = true;
-                bottomNav.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_articles()).commit();
+//                bottomNav.setVisibility(View.GONE);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_articles()).commit();
+                ft.replace(R.id.fragment_container, new fragment_articles()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+
                 break;
             case R.id.nav_tools:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_tools()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_tools()).commit();
+                ft.replace(R.id.fragment_container, new fragment_tools()).commit();
+
                 break;
             case R.id.nav_telephone_directory:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_telephone_directory()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_telephone_directory()).commit();
+                ft.replace(R.id.fragment_container, new fragment_telephone_directory()).commit();
                 break;
             case R.id.nav_faq:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_faq()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_faq()).commit();
+                ft.replace(R.id.fragment_container, new fragment_faq()).commit();
+
                 break;
             case R.id.nav_emergency:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_emergency()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_emergency()).commit();
+                ft.replace(R.id.fragment_container, new fragment_emergency()).commit();
                 break;
             case R.id.nav_workshop:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_workshop()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_workshop()).commit();
+                ft.replace(R.id.fragment_container, new fragment_workshop()).commit();
                 break;
             case R.id.nav_donate:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_donate()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_donate()).commit();
+                ft.replace(R.id.fragment_container, new fragment_donate()).commit();
                 break;
             case R.id.nav_about_us:
                 frag_art = false;
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_about_us()).commit();
+                drawer.closeDrawer(GravityCompat.START);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new fragment_about_us()).commit();
+                ft.replace(R.id.fragment_container, new fragment_about_us()).commit();
                 break;
         }
-        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 

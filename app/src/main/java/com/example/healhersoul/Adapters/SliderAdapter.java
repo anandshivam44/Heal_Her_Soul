@@ -3,6 +3,7 @@ package com.example.healhersoul.Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,7 +51,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.SilderView
     }
 
     class SilderViewHolder extends RecyclerView.ViewHolder{
-        private RoundedImageView imageView;
+        private ImageView imageView;
         private TextView articleBody;
 
         SilderViewHolder(@NonNull View itemView) {

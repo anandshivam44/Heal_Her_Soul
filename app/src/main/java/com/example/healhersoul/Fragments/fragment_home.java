@@ -1,5 +1,6 @@
 package com.example.healhersoul.Fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import java.time.LocalDate;
@@ -9,19 +10,26 @@ import java.time.temporal.ChronoUnit;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.Transition;
+import androidx.transition.TransitionInflater;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.healhersoul.Adapters.SliderAdapter_article_in_home;
 import com.example.healhersoul.Adapters.SliderAdapter_workshop;
+import com.example.healhersoul.Objects.DetailsTransition;
 import com.example.healhersoul.Objects.SliderItem;
 import com.example.healhersoul.R;
 import com.github.lzyzsd.circleprogress.ArcProgress;
@@ -30,7 +38,7 @@ import com.github.lzyzsd.circleprogress.DonutProgress;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragment_home extends Fragment {
+public class fragment_home extends Fragment implements SliderAdapter_article_in_home.ViewHolderItemClicked_Interface{
     private ViewPager2 viewPager2ForArticle;
     private Handler SliderHandlerForArticle = new Handler();
 
@@ -72,7 +80,7 @@ public class fragment_home extends Fragment {
         sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_10));
         sliderItemsForArticles.add(new SliderItem("Article title here in one line", R.drawable.image_11));
         viewPager2ForArticle = getActivity().findViewById(R.id.viewPagerImageSlider_article);
-        viewPager2ForArticle.setAdapter(new SliderAdapter_article_in_home(sliderItemsForArticles, viewPager2ForArticle));
+        viewPager2ForArticle.setAdapter(new SliderAdapter_article_in_home(sliderItemsForArticles, viewPager2ForArticle,this,this));
 
 
         //workshop part below
@@ -138,5 +146,33 @@ public class fragment_home extends Fragment {
     public void onResume() {
         super.onResume();
         SliderHandlerForWorkshop.postDelayed(SliderRunnbleForWorkshop, 2000);
+    }
+
+    @Override
+    public void viewHolderClicked(int position) {
+        Toast.makeText(getContext(), "Clicked", Toast.LENGTH_SHORT).show();
+//        fragment_articles visitingFragment = new fragment_articles();
+//            visitingFragment.setSharedElementEnterTransition(new DetailsTransition());
+//            visitingFragment.setEnterTransition(new android.transition.Fade());
+//            visitingFragment.setExitTransition(new Fade());
+//            visitingFragment.setSharedElementReturnTransition(new DetailsTransition());
+
+
+
+        fragment_articles visitingFragment = new fragment_articles();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            visitingFragment.setSharedElementEnterTransition(new DetailsTransition());
+            visitingFragment.setEnterTransition(new android.transition.Fade());
+
+            setExitTransition(new Fade());
+
+            visitingFragment.setSharedElementReturnTransition(new DetailsTransition());
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .addSharedElement(viewPager2ForArticle, "viewPagerForArticles")
+                    .replace(R.id.fragment_container, visitingFragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 }

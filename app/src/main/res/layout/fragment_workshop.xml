@@ -4,12 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.fragment_workshop"
+    android:animateLayoutChanges="true"
+
     >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_workshop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:transitionName="viewPagerForWorkshop"
+        android:animateLayoutChanges="true"
         />
 
 </RelativeLayout>

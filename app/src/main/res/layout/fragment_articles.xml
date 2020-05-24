@@ -6,6 +6,7 @@
     tools:context=".Fragments.fragment_articles">
 
     <androidx.viewpager2.widget.ViewPager2
+        android:transitionName="viewPagerForArticles"
         android:id="@+id/viewPagerImageSlider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

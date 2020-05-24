@@ -29,6 +29,7 @@
             <ImageView
                 android:id="@+id/article_image_view_home"
                 android:layout_width="match_parent"
+                android:transitionName="article_image"
                 android:layout_height="125sp"
                 android:layout_alignParentTop="true"
                 android:adjustViewBounds="true"

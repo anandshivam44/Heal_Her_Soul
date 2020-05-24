@@ -83,7 +83,7 @@ public class fragment_faq extends Fragment {
 
         RecyclerView recyclerView = getView().findViewById(R.id.recycler_faq);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mAdapter = new adapter_faq(question, answer,recyclerView);
+        mAdapter = new adapter_faq(question, answer,recyclerView,getContext());
         recyclerView.setAdapter(mAdapter);
 
     }

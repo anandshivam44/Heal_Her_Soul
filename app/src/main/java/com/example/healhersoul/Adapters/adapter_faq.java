@@ -1,12 +1,12 @@
 package com.example.healhersoul.Adapters;
 
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -25,25 +25,15 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
     //    fragment_faq context;
     String TAG = "MyTag";
     RecyclerView recyclerView;
+    Context mContext;
 
-    public adapter_faq(ArrayList<String> question, ArrayList<String> answer,RecyclerView recyclerView) {
+    public adapter_faq(ArrayList<String> question, ArrayList<String> answer, RecyclerView recyclerView,Context mContext) {
         this.question = question;
         this.answer = answer;
-        this.recyclerView=recyclerView;
+        this.recyclerView = recyclerView;
+        this.mContext=mContext;
     }
 
-//    @Override
-//    public int getItemViewType(int position) {
-//        Log.d("MyTag",currentUsername+"     "+user.get(position));
-//        if (user.get(position).equals(currentUsername)){
-//            Log.d("MyTag", "Current USER TRUE ");
-//            return VIEW_TYPE_MESSAGE_SENT;
-//        }
-//        else{
-//            Log.d("MyTag", "Current USER False ");
-//            return VIEW_TYPE_MESSAGE_RECEIVED;
-//        }
-//    }
 
     @NonNull
     @Override
@@ -58,11 +48,23 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderClass holder, int position) {//execution order 4
+
+//        holder.textView_question.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_transition_animation_1));
+
+        // lets create the animation for the whole card
+        // first lets create a reference to it
+        // you ca use the previous same animation like the following
+
+        // but i want to use a different one so lets create it ..
+        holder.itemView.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_transition_animation_1));
+        holder.viewHolder.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
+
         String content_question = question.get(position);
         String content_answer = answer.get(position);
 //        holder.textView_username.setText(content_user);
         holder.textView_question.setText(content_question);
         holder.textView_answer.setText(content_answer);
+
 
     }
 
@@ -76,9 +78,12 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
         TextView textView_answer;
         ImageButton imageButton;
         TextView toBeCollapsedTextView;
+        View viewHolder;
+
 
         public ViewHolderClass(@NonNull View itemView) {//execution order 3
             super(itemView);
+            viewHolder=itemView;
             textView_answer = itemView.findViewById(R.id.faq_text_answer);
             textView_question = itemView.findViewById(R.id.faq_text_question);
             imageButton = itemView.findViewById(R.id.arrow_down);
@@ -96,6 +101,7 @@ public class adapter_faq extends RecyclerView.Adapter<adapter_faq.ViewHolderClas
 //                    notifyItemChanged(toBeCollapsed);
 //                }
 //                toBeCollapsed = getAdapterPosition();
+                textView_answer.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_transition_animation_2));
                 textView_answer.setVisibility(View.VISIBLE);
 //                textView_answer.animate()
 //                        .translationY(view.getHeight())

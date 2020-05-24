@@ -102,8 +102,8 @@ public class fragment_articles extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
-        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
-        navBar.setVisibility(View.VISIBLE);
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().show();
+//        BottomNavigationView navBar = getActivity().findViewById(R.id.bottom_navigation);
+//        navBar.setVisibility(View.VISIBLE);
     }
 }
