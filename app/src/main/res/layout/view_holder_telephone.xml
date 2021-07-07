@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="6dp"
+    android:padding="@dimen/padding_10"
+    android:background="@drawable/border_edittext"
     >
 
     <TextView

@@ -63,6 +63,7 @@ dependencies {
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'//Youtube Player
     implementation 'com.github.lzyzsd:circleprogress:1.2.1'// Circle or Arc Progress Bar
     implementation 'com.jjoe64:graphview:4.2.2'//Graph View
+    implementation 'it.xabaras.android:recyclerview-swipedecorator:1.2.2'
 
 
 }
